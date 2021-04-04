@@ -23,5 +23,6 @@ git branch [nombre clase]
 git checkout [nombre clase]
 ```
 
+* Script de package.json para Coveralls: ```"coverage": "nyc npm tests && nyc report --reporter=text-lcov | copveralls && rm -rf .ny_output"```
 
  
