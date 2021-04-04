@@ -1,0 +1,13 @@
+{
+  "name": "pr07",
+  "version": "1.0.0",
+  "description": "Practica 7: Diseño de Menus",
+  "main": "index.js",
+  "scripts": {
+    "tests": "mocha",
+    "doc": "typedoc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
