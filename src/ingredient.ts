@@ -17,7 +17,7 @@
  */
 
 export class Ingredient {
-  constructor(private readonly name: string, 
+  constructor(public readonly name: string, 
               private readonly country: string,
               private readonly city: string,
               private readonly category: string,
@@ -25,9 +25,6 @@ export class Ingredient {
               private readonly macro: [string, number][],
               private readonly price_kg: number) {}
 
-  getName(): string {
-    return this.name;
-  }
 
   getCountry(): string {
     return this.country;
