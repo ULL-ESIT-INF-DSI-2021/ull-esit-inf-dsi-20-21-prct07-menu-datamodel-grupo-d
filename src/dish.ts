@@ -14,62 +14,48 @@
  */
 
 
-import {Ingredient} from './ingredient'
+import {Ingredient, FoodCategory,} from './ingredient'
 
 export class Dish {
-  private price: number = 0;
-  private calories: number = 0;
-  constructor(private readonly name: string,
-    private readonly category: string,
-    private readonly ingredients: [Ingredient, number][]) {
-      this.totalCalories();
-      this.totalPrice();
+  constructor(readonly name: string,
+              readonly category: string,
+              private readonly ingredients: [Ingredient, number][]) {
     }
 
-  private totalCalories(): void {
-    this.calories = 0;
+  totalCalories(): number {
+    let sum: number = 0;
     this.ingredients.forEach(element => {
-      this.calories += (element[0].getCalories() * (element[1]/100));
+      sum += (element[0].kcal * (element[1]/100));
     })
-    this.calories = parseFloat((this.calories).toFixed(0))
+    return sum = parseFloat((sum).toFixed(0))
   }
 
-  private totalPrice(): void {
-    this.price = 0;
+   totalPrice(): number{
+    let sum: number = 0;
     this.ingredients.forEach(element => {
-      this.price += (element[0].getPrice() * (element[1]/1000));
+      sum += (element[0].price_kg * (element[1]/1000));
     })
-    this.price = parseFloat((this.price).toFixed(2))
+    return sum = parseFloat((sum).toFixed(2))
   }
     
-  getName(): string {
-    return this.name;
-  }
-  
-  getCategory(): string {
-    return this.category;
-  }
-
   getPrice(): number {
-    return this.price;
-  }
-
-  getCalories(): number {
-    return this.calories;
+    return this.totalPrice();
   }
 
   showIngredients(): string {
     let result: string = "";
     this.ingredients.forEach(element => {
-      result += element[0].getName() + " (" + element[1] + "g) ";
+      result += element[0].name + " (" + element[1] + "g) ";
     })
     return result;
   }
   
+
   dominantIngredientType(): string {
-    let auxVector: string[] = [];
+
+    let auxVector: FoodCategory[] = [];
     this.ingredients.forEach(element => {
-      auxVector.push(element[0].getCategory())
+      auxVector.push(element[0].category)
     })
 
     let index: number = 0;
@@ -89,7 +75,7 @@ export class Dish {
     if (count === 1) {
       let tmp : [Ingredient, number][] = this.ingredients;
       tmp.sort((a,b) => (a[1] < b[1]) ? 1 : ((b[1] < a[1]) ? -1 : 0))
-      return tmp[0][0].getCategory()
+      return tmp[0][0].category
     }
     else {
       return item;

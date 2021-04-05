@@ -7,56 +7,23 @@
  * @param kcal Calories of the ingredient
  * @param macro Macros of the Ingredient
  * @param price_kg Price of the Ingredient
- * @method getName() Returns the name of the Ingredient
- * @method getCountry() Returns the country of the Ingredient
- * @method getCity() Returns the city of the Ingredient
- * @method getCategory() Returns the category of the Ingredient
- * @method getCalories() Returns the calories of the Ingredient
- * @method getMacros() Returns a vector of the macros of the Ingredient
- * @method getPrice() Returns the price of the Ingredient
  */
 
-export class Ingredient {
-<<<<<<< HEAD
-  constructor(private readonly name: string, 
-=======
-  constructor(public readonly name: string, 
->>>>>>> ingredient
-              private readonly country: string,
-              private readonly city: string,
-              private readonly category: string,
-              private readonly kcal: number,
-              private readonly macro: [string, number][],
-              private readonly price_kg: number) {}
+type FoodCategory = "Meat" | "Fish" | "Fruit" | "Vegetable" | 
+                    "Dairy" | "Grain" | "Others" | "Legumes";
 
-<<<<<<< HEAD
-  getName(): string {
-    return this.name;
-  }
-=======
->>>>>>> ingredient
-
-  getCountry(): string {
-    return this.country;
-  }
-
-  getCity(): string {
-    return this.city;
-  }
-
-  getCategory(): string {
-    return this.category;
-  }
-
-  getCalories(): number {
-    return this.kcal;
-  }
-
-  getMacros(): [string, number][] {
-    return this.macro;
-  }
-
-  getPrice(): number {
-    return this.price_kg;
-  }
+type Macro = {
+  group: "Prot" | "Carb" | "Fat" | "Fiber" ,
+  grams: number; 
 }
+ class Ingredient {
+  constructor(public readonly name: string, 
+              public readonly country: string,
+              public readonly city: string,
+              public readonly category: FoodCategory,
+              public readonly kcal: number,
+              public readonly macro: Macro[],
+              public readonly price_kg: number) {}
+};
+
+export {FoodCategory, Macro,Ingredient};
