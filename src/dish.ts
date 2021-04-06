@@ -37,10 +37,6 @@ export class Dish {
     })
     return sum = parseFloat((sum).toFixed(2))
   }
-    
-  getPrice(): number {
-    return this.totalPrice();
-  }
 
   showIngredients(): string {
     let result: string = "";
