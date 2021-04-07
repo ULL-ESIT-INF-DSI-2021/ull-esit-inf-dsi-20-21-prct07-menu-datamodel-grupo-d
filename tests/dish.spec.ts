@@ -31,18 +31,18 @@ describe('Class Dish', () => {
   });
 
   it("Getters Dish Price" , () => {
-    expect(dish1.totalPrice()).to.eql(1.68);
+    expect(dish1.totalDishPrice()).to.eql(1.68);
   });
 
   it("Getters Dish Calories" , () => {
-    expect(dish1.totalCalories()).to.eql(363);
+    expect(dish1.totalDishCalories()).to.eql(363);
   });
 
   it("List of Ingredients" , () => {
-    expect(dish1.showIngredients()).to.eql("Tomate (200g) Lechuga (150g) Queso (50g) Picatostes (25g) Cebolla (75g) ");
+    expect(dish1.showDishIngredients()).to.eql("Tomate (200g) Lechuga (150g) Queso (50g) Picatostes (25g) Cebolla (75g) ");
   });
 
   it("Dominant Ingredient" , () => {
-    expect(dish1.dominantIngredientType()).to.eql("Vegetable");
+    expect(dish1.dominantIngredientTypeOnDish()).to.eql("Vegetable");
   });
 });

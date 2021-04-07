@@ -24,7 +24,7 @@ export class Dish {
               private readonly ingredients: [Ingredient, number][]) {
     }
 
-  totalCalories(): number {
+  totalDishCalories(): number {
     let sum: number = 0;
     this.ingredients.forEach(element => {
       sum += (element[0].kcal * (element[1]/100));
@@ -32,7 +32,7 @@ export class Dish {
     return sum = parseFloat((sum).toFixed(0))
   }
 
-   totalPrice(): number{
+   totalDishPrice(): number{
     let sum: number = 0;
     this.ingredients.forEach(element => {
       sum += (element[0].price_kg * (element[1]/1000));
@@ -40,7 +40,7 @@ export class Dish {
     return sum = parseFloat((sum).toFixed(2))
   }
 
-  showIngredients(): string {
+  showDishIngredients(): string {
     let result: string = "";
     this.ingredients.forEach(element => {
       result += element[0].name + " (" + element[1] + "g) ";
@@ -49,7 +49,7 @@ export class Dish {
   }
   
 
-  dominantIngredientType(): string {
+  dominantIngredientTypeOnDish(): string {
 
     let auxVector: FoodCategory[] = [];
     this.ingredients.forEach(element => {
