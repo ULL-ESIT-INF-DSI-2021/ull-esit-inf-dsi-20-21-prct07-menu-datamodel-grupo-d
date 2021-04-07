@@ -1,12 +1,10 @@
 import 'mocha';
 import {expect} from 'chai';
-import {Ingredient, Macro} from '../src/ingredient';
+import {Ingredient} from '../src/ingredient';
 import {Dish} from '../src/dish';
 
 describe('Class Dish', () => {
 
-
-                                                                       
   let tomate = new Ingredient("Tomate", "Colombia", "Cali", "Fruit", 22, 
                               [{group:"Prot", grams: 1}, {group:"Fat", grams: 0.11}, {group:"Carb", grams: 3.5}], 1.45);
   let lechuga = new Ingredient("Lechuga", "Cuba", "Moron", "Vegetable", 14, 
@@ -23,21 +21,27 @@ describe('Class Dish', () => {
   it("Create new Object Dish" , () => {
       expect(dish1 instanceof Dish).to.eql(true);
   });
+
   it("Getters Dish Name" , () => {
     expect(dish1.name).to.eql("Ensalada Cesar*");
   });
+
   it("Getters Dish Category" , () => {
     expect(dish1.category).to.eql("Entrante");
   });
+
   it("Getters Dish Price" , () => {
     expect(dish1.totalPrice()).to.eql(1.68);
   });
+
   it("Getters Dish Calories" , () => {
     expect(dish1.totalCalories()).to.eql(363);
   });
+
   it("List of Ingredients" , () => {
     expect(dish1.showIngredients()).to.eql("Tomate (200g) Lechuga (150g) Queso (50g) Picatostes (25g) Cebolla (75g) ");
   });
+
   it("Dominant Ingredient" , () => {
     expect(dish1.dominantIngredientType()).to.eql("Vegetable");
   });
