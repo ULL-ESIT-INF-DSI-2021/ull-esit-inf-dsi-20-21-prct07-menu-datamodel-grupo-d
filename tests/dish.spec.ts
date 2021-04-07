@@ -27,7 +27,7 @@ describe('Class Dish', () => {
   });
 
   it("Getters Dish Category" , () => {
-    expect(dish1.DishCategory).to.eql("Entrante");
+    expect(dish1.DishCategory).to.eql("Starter");
   });
 
   it("Getters Dish Price" , () => {
