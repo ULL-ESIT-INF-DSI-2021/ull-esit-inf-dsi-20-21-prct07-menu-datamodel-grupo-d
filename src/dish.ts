@@ -14,7 +14,7 @@
  */
 
 
-import {Ingredient, FoodCategory,} from './ingredient'
+import {Ingredient, FoodCategory} from './ingredient'
 
 export class Dish {
   constructor(readonly name: string,
@@ -69,7 +69,7 @@ export class Dish {
       index = 0;
     }
     if (count === 1) {
-      let tmp : [Ingredient, number][] = this.ingredients;
+      let tmp: [Ingredient, number][] = this.ingredients;
       tmp.sort((a,b) => (a[1] < b[1]) ? 1 : ((b[1] < a[1]) ? -1 : 0))
       return tmp[0][0].category
     }
