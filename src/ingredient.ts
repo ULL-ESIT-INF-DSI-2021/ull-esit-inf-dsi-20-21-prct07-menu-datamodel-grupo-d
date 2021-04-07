@@ -9,14 +9,15 @@
  * @param price_kg Price of the Ingredient
  */
 
-type FoodCategory = "Meat" | "Fish" | "Fruit" | "Vegetable" | 
+export type FoodCategory = "Meat" | "Fish" | "Fruit" | "Vegetable" | 
                     "Dairy" | "Grain" | "Others" | "Legumes";
 
-type Macro = {
+export type Macro = {
   group: "Prot" | "Carb" | "Fat" | "Fiber" ,
   grams: number; 
 }
- class Ingredient {
+
+export class Ingredient {
   constructor(public readonly name: string, 
               public readonly country: string,
               public readonly city: string,
@@ -25,5 +26,3 @@ type Macro = {
               public readonly macro: Macro[],
               public readonly price_kg: number) {}
 };
-
-export {FoodCategory, Macro,Ingredient};
