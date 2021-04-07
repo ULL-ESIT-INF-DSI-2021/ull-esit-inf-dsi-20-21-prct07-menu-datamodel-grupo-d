@@ -1,7 +1,7 @@
 import 'mocha';
 import {expect} from 'chai';
 import {Ingredient} from '../src/ingredient';
-import {Dish} from '../src/dish';
+import {Dish, DishCategory} from '../src/dish';
 
 describe('Class Dish', () => {
 
@@ -16,7 +16,7 @@ describe('Class Dish', () => {
   let cebolla = new Ingredient("Cebolla", "Mexico", "Cancun", "Vegetable", 57, 
                                [{group:"Prot", grams: 3.1 }, {group:"Fat", grams:0.99}, {group:"Carb", grams:  17.9} ], 2.57)
   
-  let dish1 = new Dish("Ensalada Cesar*", "Entrante", [[tomate, 200], [lechuga, 150], [queso, 50], [picatostes, 25], [cebolla, 75]]);
+  let dish1 = new Dish("Ensalada Cesar*", "Starter", [[tomate, 200], [lechuga, 150], [queso, 50], [picatostes, 25], [cebolla, 75]]);
   
   it("Create new Object Dish" , () => {
       expect(dish1 instanceof Dish).to.eql(true);
@@ -27,7 +27,7 @@ describe('Class Dish', () => {
   });
 
   it("Getters Dish Category" , () => {
-    expect(dish1.category).to.eql("Entrante");
+    expect(dish1.DishCategory).to.eql("Entrante");
   });
 
   it("Getters Dish Price" , () => {
