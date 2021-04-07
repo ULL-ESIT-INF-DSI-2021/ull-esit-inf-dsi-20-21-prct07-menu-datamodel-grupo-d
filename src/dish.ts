@@ -16,9 +16,11 @@
 
 import {Ingredient, FoodCategory} from './ingredient'
 
+export type DishCategory = "Starter" | "First" | "Main" | "Dessert";
+
 export class Dish {
   constructor(readonly name: string,
-              readonly category: string,
+              readonly DishCategory: DishCategory,
               private readonly ingredients: [Ingredient, number][]) {
     }
 
