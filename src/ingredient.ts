@@ -10,7 +10,7 @@
  */
 
 export type FoodCategory = "Meat" | "Fish" | "Fruit" | "Vegetable" | 
-                    "Dairy" | "Grain" | "Others" | "Legumes";
+                           "Dairy" | "Grain" | "Others" | "Legumes";
 
 export type Macro = {
   group: "Prot" | "Carb" | "Fat" | "Fiber" ,
