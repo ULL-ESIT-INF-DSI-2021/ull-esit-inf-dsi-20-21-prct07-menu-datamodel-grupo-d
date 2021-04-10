@@ -10,6 +10,7 @@
  */
 
 import {Dish, DishCategory} from './dish';
+import {Macro} from './ingredient'
 
 export class Menu {
   constructor(private dishes: Dish[]) {
@@ -66,8 +67,25 @@ export class Menu {
   showMenuDishes(): string[] {
     let dishIngredients: string[] = [];
     this.dishes.forEach(dish => {
-      dishIngredients.push(dish.showDishIngredients());
+      dishIngredients.push(dish.name + " -> " + dish.showDishIngredients());
     })
     return dishIngredients;
+  }
+
+  getMenuMacro(): Macro[] {
+    let sumProt:  Macro = {group: "Prot", grams: 0};
+    let sumFat:   Macro = {group: "Fat" , grams: 0};
+    let sumCarb:  Macro = {group: "Carb", grams: 0};
+    let sumFiber: Macro = {group: "Fiber", grams: 0};
+    this.dishes.forEach(dish => {
+      dish.getDishMacro().forEach(macro => {
+        if (macro.group === "Prot") sumProt.grams += macro.grams;
+        if (macro.group === "Fat") sumFat.grams += macro.grams;
+        if (macro.group === "Carb") sumCarb.grams += macro.grams;
+        if (macro.group === "Fiber") sumFiber.grams += macro.grams;
+      });
+    });
+    let sumMacro: Macro[] = [sumProt, sumFat, sumCarb, sumFiber];
+    return sumMacro;
   }
 }

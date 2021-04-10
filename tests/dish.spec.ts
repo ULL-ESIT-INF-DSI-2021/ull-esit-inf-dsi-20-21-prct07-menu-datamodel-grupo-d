@@ -55,6 +55,17 @@ describe('Class Dish', () => {
     expect(dish1.showDishIngredients()).to.eql("Tomate (200g) Lechuga (150g) Queso (50g) Picatostes (25g) Cebolla (75g) ");
   });
 
+  it("Dish Macros", () => {
+    expect(dish1.getDishMacro()).to.eql(
+      [
+        {group: "Prot", grams: 20.36}, 
+        {group: "Fat", grams: 16.26},
+        {group: "Carb", grams: 38},
+        {group: "Fiber", grams: 0}
+      ]
+    )
+  });
+
   it("Dominant Ingredient" , () => {
     expect(dish1.dominantIngredientTypeOnDish()).to.eql("Vegetable");
   });

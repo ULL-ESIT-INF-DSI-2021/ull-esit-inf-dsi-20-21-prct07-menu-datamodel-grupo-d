@@ -67,11 +67,22 @@ describe('Class Menu', () => {
     expect(Italian_Menu.totalMenuCalories()).to.eql(1551);
   });
 
+  it("Manu Macros", () => {
+    expect(Italian_Menu.getMenuMacro()).to.eql(
+      [
+        {group: "Prot", grams: 106.53999999999999},
+        {group: "Fat", grams: 62.34},
+        {group: "Carb", grams: 147.5},
+        {group: "Fiber", grams: 0}
+      ]
+    )
+  });
+
   it("Menu dishes are...", () => {
     expect(Italian_Menu.showMenuDishes()).to.eql(
       [
-        "Tomate (200g) Lechuga (150g) Queso (50g) Picatostes (25g) Cebolla (75g) ",
-        "Spaguetti (300g) Pollo (200g) Queso (50g) Cebolla (100g) Perejil (10g) "
+        "Ensalada Cesar -> Tomate (200g) Lechuga (150g) Queso (50g) Picatostes (25g) Cebolla (75g) ",
+        "Spaguetti con Pollo -> Spaguetti (300g) Pollo (200g) Queso (50g) Cebolla (100g) Perejil (10g) "
       ]
     );
   });

@@ -14,7 +14,7 @@
  */
 
 
-import {Ingredient, FoodCategory} from './ingredient'
+import {Ingredient, FoodCategory, Macro} from './ingredient'
 
 export type DishCategory = "Starter" | "First" | "Main" | "Dessert";
 
@@ -45,6 +45,23 @@ export class Dish {
       result += element[0].name + " (" + element[1] + "g) ";
     })
     return result;
+  }
+
+  getDishMacro(): Macro[] {
+    let sumProt:  Macro = {group: "Prot", grams: 0};
+    let sumFat:  Macro = {group: "Fat", grams: 0};
+    let sumCarb:   Macro = {group: "Carb" , grams: 0};
+    let sumFiber: Macro = {group: "Fiber", grams: 0};
+    this.ingredients.forEach(ingredient => {
+      ingredient[0].macro.forEach(macro => {
+        if (macro.group === "Prot") sumProt.grams += macro.grams * ingredient[1]/100;
+        if (macro.group === "Fat") sumFat.grams += macro.grams * ingredient[1]/100;
+        if (macro.group === "Carb") sumCarb.grams += macro.grams * ingredient[1]/100;
+        if (macro.group === "Fiber") sumFiber.grams += macro.grams * ingredient[1]/100;
+      });
+    });
+    let sumMacro: Macro[] = [sumProt, sumFat, sumCarb, sumFiber];
+    return sumMacro;
   }
   
   dominantIngredientTypeOnDish(): string {
