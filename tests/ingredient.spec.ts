@@ -7,7 +7,7 @@ describe('Class Ingredient', () => {
   // Ingrediente -> Tomate
 
   let tomate = new Ingredient("Tomate", "Colombia", "Cali", "Fruit", 22,
-                              [{group: "Prot", grams: 1}, {group: "Carb", grams: 3.5}, {group: "Fat", grams: 0.11}],
+                              [{group: "Prot", grams: 1}, {group: "Fat", grams: 0.11}, {group: "Carb", grams: 3.5}],
                               1.45);
 
   it("Create new Object Ingredient" , () => {
