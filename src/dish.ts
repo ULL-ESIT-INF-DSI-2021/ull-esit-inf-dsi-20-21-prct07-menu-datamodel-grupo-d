@@ -20,9 +20,8 @@ export type DishCategory = "Starter" | "First" | "Main" | "Dessert";
 
 export class Dish {
   constructor(readonly name: string,
-              readonly DishCategory: DishCategory,
-              private readonly ingredients: [Ingredient, number][]) {
-    }
+              readonly category: DishCategory,
+              private readonly ingredients: [Ingredient, number][]) {}
 
   totalDishCalories(): number {
     let sum: number = 0;
@@ -48,9 +47,7 @@ export class Dish {
     return result;
   }
   
-
   dominantIngredientTypeOnDish(): string {
-
     let auxVector: FoodCategory[] = [];
     this.ingredients.forEach(element => {
       auxVector.push(element[0].category)

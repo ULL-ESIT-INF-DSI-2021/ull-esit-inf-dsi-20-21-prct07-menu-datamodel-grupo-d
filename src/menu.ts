@@ -1,20 +1,31 @@
 /**
  * Class Menu
+ * @param dishes Array of dishes in the menu
+ * @method categoryChecker() Checks if at least there are 3 different dish categories
+ * @method addDish() Pushes a new dish into the menu
+ * @method removeDish() Eliminates a dish from the menu by his name
+ * @method totalMenuPrice() Calculates the total menu price
+ * @method totalMenuCalories() Calculates the total menu calories
+ * @method showMenuDishes() Returns the menu dish and its ingredients 
  */
 
 import {Dish, DishCategory} from './dish';
 
 export class Menu {
-  constructor(private dishes: Dish[]) {}
+  constructor(private dishes: Dish[]) {
+    if (!this.categoryChecker()) {
+      console.error("No contiene los tipos de plato suficientes");
+    }
+  }
 
   categoryChecker(): boolean {
     let types: boolean[] = [false, false, false, false];
     let cont = 0
     this.dishes.forEach(dish => {
-      if (dish.DishCategory === "Starter") types[0] = true;
-      if (dish.DishCategory === "First")   types[1] = true;
-      if (dish.DishCategory === "Main")    types[2] = true;
-      if (dish.DishCategory === "Dessert") types[3] = true;
+      if (dish.category === "Starter") types[0] = true;
+      if (dish.category === "First")   types[1] = true;
+      if (dish.category === "Main")    types[2] = true;
+      if (dish.category === "Dessert") types[3] = true;
     })
     types.forEach(elem => {
       if (elem) cont++;
