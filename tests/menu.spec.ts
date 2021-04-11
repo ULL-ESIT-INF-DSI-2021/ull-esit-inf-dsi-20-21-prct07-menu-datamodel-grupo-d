@@ -86,4 +86,13 @@ describe('Class Menu', () => {
       ]
     );
   });
+
+  it("Group of ingredients in the menu sorted by appereance", () => {
+    expect(Italian_Menu.showGroupIngredients()).to.eql(
+      [
+        "Ensalada Cesar -> Fruit Vegetable Dairy Grain Vegetable ",
+        "Spaguetti con Pollo -> Others Meat Dairy Vegetable Vegetable "
+      ]
+    );
+  });
 });
