@@ -54,10 +54,14 @@ export class Dish {
     let sumFiber: Macro = {group: "Fiber", grams: 0};
     this.ingredients.forEach(ingredient => {
       ingredient[0].macro.forEach(macro => {
-        if (macro.group === "Prot") sumProt.grams += macro.grams * ingredient[1]/100;
-        if (macro.group === "Fat") sumFat.grams += macro.grams * ingredient[1]/100;
-        if (macro.group === "Carb") sumCarb.grams += macro.grams * ingredient[1]/100;
-        if (macro.group === "Fiber") sumFiber.grams += macro.grams * ingredient[1]/100;
+        if (macro.group === "Prot") 
+          sumProt.grams += parseFloat((macro.grams * ingredient[1]/100).toFixed(0));
+        if (macro.group === "Fat") 
+          sumFat.grams += parseFloat((macro.grams * ingredient[1]/100).toFixed(0));
+        if (macro.group === "Carb") 
+          sumCarb.grams += parseFloat((macro.grams * ingredient[1]/100).toFixed(0));
+        if (macro.group === "Fiber") 
+          sumFiber.grams += parseFloat((macro.grams * ingredient[1]/100).toFixed(0));
       });
     });
     let sumMacro: Macro[] = [sumProt, sumFat, sumCarb, sumFiber];
