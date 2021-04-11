@@ -3,13 +3,10 @@
  * @param name Name of the dish
  * @param category Category of the dish
  * @param ingredeints Ingredients in the dish
- * @method getName() Returns name of the dish
- * @method getCategory() Returns category of the dish
  * @method showIngredients() Returns ingredients of the dish
- * @method getPrice() Returns price of the dish
- * @method getCalories() Returns calories of the dish
- * @method totalCalories() Calculates total calories of the dish
- * @method totalPrice() Calculates total price of the dish
+ * @method totalDishCalories() Calculates total calories of the dish
+ * @method totalDishPrice() Calculates total price of the dish
+ * @method getDishMacro() Returns the total amount of proteins, carbs, fats and fiber in the dish
  * @method dominantIngredientType() Calcualtes the most dominant type of ingredient of the dish 
  */
 
@@ -21,7 +18,7 @@ export type DishCategory = "Starter" | "First" | "Main" | "Dessert";
 export class Dish {
   constructor(readonly name: string,
               readonly category: DishCategory,
-              private readonly ingredients: [Ingredient, number][]) {}
+              public readonly ingredients: [Ingredient, number][]) {}
 
   totalDishCalories(): number {
     let sum: number = 0;
