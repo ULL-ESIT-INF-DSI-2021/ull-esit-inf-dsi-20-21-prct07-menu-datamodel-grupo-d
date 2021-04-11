@@ -58,9 +58,9 @@ describe('Class Dish', () => {
   it("Dish Macros", () => {
     expect(dish1.getDishMacro()).to.eql(
       [
-        {group: "Prot", grams: 20.36}, 
-        {group: "Fat", grams: 16.26},
-        {group: "Carb", grams: 38},
+        {group: "Prot", grams: 21},
+        {group: "Fat", grams: 16},
+        {group: "Carb", grams: 37},
         {group: "Fiber", grams: 0}
       ]
     )

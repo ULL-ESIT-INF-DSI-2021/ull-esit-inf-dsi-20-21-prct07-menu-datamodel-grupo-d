@@ -70,9 +70,9 @@ describe('Class Menu', () => {
   it("Manu Macros", () => {
     expect(Italian_Menu.getMenuMacro()).to.eql(
       [
-        {group: "Prot", grams: 106.53999999999999},
-        {group: "Fat", grams: 62.34},
-        {group: "Carb", grams: 147.5},
+        {group: "Prot", grams: 107},
+        {group: "Fat", grams: 62},
+        {group: "Carb", grams: 147},
         {group: "Fiber", grams: 0}
       ]
     )
