@@ -6,7 +6,9 @@
  * @method removeDish() Eliminates a dish from the menu by his name
  * @method totalMenuPrice() Calculates the total menu price
  * @method totalMenuCalories() Calculates the total menu calories
- * @method showMenuDishes() Returns the menu dish and its ingredients 
+ * @method showMenuDishes() Returns the menu dish and its ingredients
+ * @method getMenuMacro() Returns the total amount of proteins, carbs, fats and fiber in the menu
+ * @method showGroupIngredients() Returns the group of ingredients in order of appereance
  */
 
 import {Dish, DishCategory} from './dish';
@@ -87,5 +89,17 @@ export class Menu {
     });
     let sumMacro: Macro[] = [sumProt, sumFat, sumCarb, sumFiber];
     return sumMacro;
+  }
+
+  showGroupIngredients(): string[] {
+    let group: string[] = [];
+    this.dishes.forEach(dish => {
+      let dishName: string = dish.name + " -> ";
+      dish.ingredients.forEach(ing => {
+        dishName += ing[0].category + " ";
+      })
+      group.push(dishName);
+    })
+    return group;
   }
 }
