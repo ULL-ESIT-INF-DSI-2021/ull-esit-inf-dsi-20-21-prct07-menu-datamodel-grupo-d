@@ -165,15 +165,49 @@ let Chocolate: Ingredient        = new Ingredient("Chocolate", "España", "Barce
                                                     {group: "Prot", grams: 8.4}, {group: "Fat", grams: 31}, {group: "Carb", grams: 60}, {group: "Fiber", grams: 0}
                                                   ], 7);
 
+
+let Mantequilla: Ingredient      = new Ingredient("Mantequilla", "España", "Barcelona", "Dairy", 749,
+                                                  [
+                                                    {group: "Prot", grams: 0.6}, {group: "Fat", grams: 83}, {group: "Carb", grams: 1}, {group: "Fiber", grams: 0}
+                                                  ], 1.7);
+
+let Manzana: Ingredient          = new Ingredient("Manzana", "España", "Cadiz", "Fruit", 61,
+                                                  [
+                                                    {group: "Prot", grams: 0.3}, {group: "Fat", grams: 0}, {group: "Carb", grams: 12}, {group: "Fiber", grams: 2}
+                                                  ], 3.15);
+
+let Nata: Ingredient             = new Ingredient("Nata", "España", "Cadiz", "Dairy", 448,
+                                                  [
+                                                    {group: "Prot", grams: 1.5}, {group: "Fat", grams: 48.2}, {group: "Carb", grams: 2}, {group: "Fiber", grams: 0}
+                                                  ], 3.45);
+
+let Hielo: Ingredient            = new Ingredient("Hielo", "España", "Cadiz", "Others", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Galletas: Ingredient         = new Ingredient("Galleta", "España", "Almeria", "Grain", 450,
+                                                  [
+                                                    {group: "Prot", grams: 7}, {group: "Fat", grams: 14}, {group: "Carb", grams: 71.5}, {group: "Fiber", grams: 5}
+                                                  ], 1.4);
+
+let Vinagre: Ingredient          = new Ingredient("Vinagre", "España", "Barcelona", "Others", 4,
+                                                  [
+                                                    {group: "Prot", grams: 0.4}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0.6}, {group: "Fiber", grams: 0}
+                                                  ], 0.5);
+
+
+let Col: Ingredient              = new Ingredient("Hielo", "España", "Cadiz", "Others", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Setas: Ingredient            = new Ingredient("Hielo", "España", "Cadiz", "Others", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
 /*
-let Mantequilla: Ingredient      = new Ingredient();
-let Manzana: Ingredient          = new Ingredient();
-let Nata: Ingredient             = new Ingredient();
-let Hielo: Ingredient            = new Ingredient();
-let Galletas: Ingredient         = new Ingredient();
-let Vinagre: Ingredient          = new Ingredient();
-let Col: Ingredient              = new Ingredient();
-let Setas: Ingredient            = new Ingredient();
 let Guindilla: Ingredient        = new Ingredient();
 let Vino: Ingredient             = new Ingredient();
 let Laurel: Ingredient           = new Ingredient();
