@@ -197,22 +197,43 @@ let Vinagre: Ingredient          = new Ingredient("Vinagre", "España", "Barcelo
                                                   ], 0.5);
 
 
-let Col: Ingredient              = new Ingredient("Hielo", "España", "Cadiz", "Others", 0,
+let Col: Ingredient              = new Ingredient("Col", "España", "Cadiz", "Vegetable", 33,
                                                   [
-                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                    {group: "Prot", grams: 1.7}, {group: "Fat", grams: 0.3}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 1}
                                                   ], 0.6);
 
-let Setas: Ingredient            = new Ingredient("Hielo", "España", "Cadiz", "Others", 0,
+let Setas: Ingredient            = new Ingredient("Setas", "España", "Cadiz", "Vegetable", 31,
+                                                  [
+                                                    {group: "Prot", grams: 1.8}, {group: "Fat", grams: 0.3}, {group: "Carb", grams: 4}, {group: "Fiber", grams: 2.5}
+                                                  ], 6.45);
+
+
+let Guindilla: Ingredient        = new Ingredient("Guindilla", "España", "Cadiz", "Others", 331,
                                                   [
                                                     {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
-                                                  ], 0.6);
+                                                  ], 45);
+
+let Vino: Ingredient             = new Ingredient("Vino", "España", "Jerez", "Others", 63,
+                                                  [
+                                                    {group: "Prot", grams: 0.2}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0.2}, {group: "Fiber", grams: 0}
+                                                  ], 1.2);
+
+let Laurel: Ingredient           = new Ingredient("Laurel", "España", "Cadiz", "Vegetable", 300,
+                                                  [
+                                                    {group: "Prot", grams: 7.6}, {group: "Fat", grams: 8.4}, {group: "Carb", grams: 48.6}, {group: "Fiber", grams: 0}
+                                                  ], 22);
+
+let Lomo: Ingredient             = new Ingredient("Lomo", "España", "Cadiz", "Meat", 152,
+                                                  [
+                                                    {group: "Prot", grams: 18}, {group: "Fat", grams: 8.85}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 4.5);
+
+let Cafe: Ingredient             = new Ingredient("Cafe", "Colombia", "Cali", "Grain", 4,
+                                                  [
+                                                    {group: "Prot", grams: 14}, {group: "Fat", grams: 0}, {group: "Carb", grams: 11}, {group: "Fiber", grams: 0}
+                                                  ], 3.1);
 
 /*
-let Guindilla: Ingredient        = new Ingredient();
-let Vino: Ingredient             = new Ingredient();
-let Laurel: Ingredient           = new Ingredient();
-let Lomo: Ingredient             = new Ingredient();
-let Cafe: Ingredient             = new Ingredient();
 let Aguacate: Ingredient         = new Ingredient();
 let Mango: Ingredient            = new Ingredient();
 let Panceta: Ingredient          = new Ingredient();
@@ -220,10 +241,6 @@ let Jamon_Serrano: Ingredient    = new Ingredient();
 let Langostino: Ingredient       = new Ingredient();
 let Gambas: Ingredient           = new Ingredient();
 let Agua: Ingredient             = new Ingredient();
-let Coca_Cola: Ingredient        = new Ingredient();
-let Fanta_Naranja: Ingredient    = new Ingredient();
-let Sprite: Ingredient           = new Ingredient();
-let Cerveza: Ingredient          = new Ingredient();
 let Comino: Ingredient           = new Ingredient();
 let Apio: Ingredient             = new Ingredient();
 let Alacaparras: Ingredient      = new Ingredient();
