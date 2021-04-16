@@ -234,26 +234,105 @@ let Cafe: Ingredient             = new Ingredient("Cafe", "Colombia", "Cali", "G
                                                   ], 3.1);
 
 /*
-let Aguacate: Ingredient         = new Ingredient();
-let Mango: Ingredient            = new Ingredient();
-let Panceta: Ingredient          = new Ingredient();
-let Jamon_Serrano: Ingredient    = new Ingredient();
-let Langostino: Ingredient       = new Ingredient();
-let Gambas: Ingredient           = new Ingredient();
-let Agua: Ingredient             = new Ingredient();
-let Comino: Ingredient           = new Ingredient();
-let Apio: Ingredient             = new Ingredient();
-let Alacaparras: Ingredient      = new Ingredient();
-let Rape: Ingredient             = new Ingredient();
-let Guisantes: Ingredient        = new Ingredient();
-let Mejillones: Ingredient       = new Ingredient();
-let Curry: Ingredient            = new Ingredient();
-let Azafran: Ingredient          = new Ingredient();
-let Tomillo: Ingredient          = new Ingredient();
-let Pan_Rallado: Ingredient      = new Ingredient();
-let Maicena: Ingredient          = new Ingredient();
-let Requeson: Ingredient         = new Ingredient();
-let Naranja: Ingredient          = new Ingredient();
+let Aguacate: Ingredient         = new Ingredient("Aguacate", "España", "Cadiz", "Fruit", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Mango: Ingredient            = new Ingredient("Mango", "España", "Cadiz", "Fruit", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Panceta: Ingredient          = new Ingredient("Panceta", "Italia", "Verona", "Meat", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Jamon_Serrano: Ingredient    = new Ingredient("Jamon Serrano", "España", "Cadiz", "Meat", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Langostino: Ingredient       = new Ingredient("Langostino", "España", "Cadiz", "Fish", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Gambas: Ingredient           = new Ingredient("Gambas", "España", "Cadiz", "Fish", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Agua: Ingredient             = new Ingredient("Agua", "España", "Cadiz", "Others", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Comino: Ingredient           = new Ingredient("Comino", "España", "Cadiz", "Others", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Apio: Ingredient             = new Ingredient("Apio", "España", "Cadiz", "Vegetable", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Alacaparras: Ingredient      = new Ingredient("Alacaparras", "España", "Cadiz", "Vegetable", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Rape: Ingredient             = new Ingredient("Rape", "España", "Cadiz", "Fish", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Guisantes: Ingredient        = new Ingredient("Guisantes", "España", "Cadiz", "Vegetable", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Mejillones: Ingredient       = new Ingredient("Mejillones", "España", "Cadiz", "Fish", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Curry: Ingredient            = new Ingredient("Curry", "España", "Cadiz", "Others", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Azafran: Ingredient          = new Ingredient("Azafran", "España", "Cadiz", "Others", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Tomillo: Ingredient          = new Ingredient("Tomillo", "España", "Cadiz", "Others", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Pan_Rallado: Ingredient      = new Ingredient("Pan Rallado", "España", "Cadiz", "Grain", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Maicena: Ingredient          = new Ingredient("Maicena", "España", "Cadiz", "Grain", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Requeson: Ingredient         = new Ingredient("Requeson", "España", "Cadiz", "Dairy", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
+
+let Naranja: Ingredient          = new Ingredient("Naranja", "España", "Cadiz", "Fruit", 0,
+                                                  [
+                                                    {group: "Prot", grams: 0}, {group: "Fat", grams: 0}, {group: "Carb", grams: 0}, {group: "Fiber", grams: 0}
+                                                  ], 0.6);
 */
 
 
