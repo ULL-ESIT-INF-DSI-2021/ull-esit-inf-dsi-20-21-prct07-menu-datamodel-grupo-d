@@ -1,1 +1,0 @@
-# Informe Practica 7: Diseño de Menu

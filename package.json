@@ -7,8 +7,9 @@
     "build": "tsc ",
     "coverage": "nyc npm run tests && nyc report --reporter=lcov",
     "start": "tsc && node dist/comand.js",
+    "watch": "mocha --watch",
     "tests": "mocha",
-    "doc": "typedoc"
+    "doc": "typedoc; touch ./docs/.nojekyll"
   },
   "keywords": [],
   "author": "",
