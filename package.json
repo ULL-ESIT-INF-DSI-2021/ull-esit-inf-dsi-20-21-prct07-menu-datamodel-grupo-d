@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc ",
+    "coverage": "nyc npm test && nyc report --reporter=lcov",
     "start": "tsc && node dist/comand.js",
     "tests": "mocha",
     "doc": "typedoc"
