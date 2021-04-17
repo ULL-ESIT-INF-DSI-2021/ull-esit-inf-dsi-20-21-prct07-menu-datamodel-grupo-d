@@ -4,6 +4,7 @@
   "description": "Practica 7: Diseño de Menus",
   "main": "index.js",
   "scripts": {
+    "build": "tsc ",
     "start": "tsc && node dist/comand.js",
     "tests": "mocha",
     "doc": "typedoc"
