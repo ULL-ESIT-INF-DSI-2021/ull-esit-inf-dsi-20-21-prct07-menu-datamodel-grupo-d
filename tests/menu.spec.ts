@@ -49,11 +49,15 @@ describe('Class Menu', () => {
   
   // Menu -> Ensalada Cesar de Entrante y Pasta con Pollo de Principal (Menu Italiano)
 
-  let Italian_Menu = new Menu([CesarSalad, PastaChicken]);
+  let Italian_Menu = new Menu("Menu Italiano", [CesarSalad, PastaChicken]);
 
   it("Create new Object Menu", () => {
       expect(Italian_Menu instanceof Menu).to.eql(true);
   });
+
+  it("Menu Name", () => {
+    expect(Italian_Menu.get_name()).to.eql("Menu Italiano");
+});
 
   it("Has at least 3 categories", () => {
     expect(Italian_Menu.categoryChecker()).to.eql(false);
