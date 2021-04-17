@@ -1,4 +1,4 @@
-name: P07 code coverage
+name: P07 code  coverage
 
 on:
   push:
