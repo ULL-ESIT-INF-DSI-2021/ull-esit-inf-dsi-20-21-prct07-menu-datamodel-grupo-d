@@ -1,4 +1,4 @@
-import {Ingredient, FoodCategory} from './ingredient';
+import {Ingredient, FoodCategory} from '../ingredient';
 
 export let Arroz: Ingredient            = new Ingredient("Arroz", "China", "Pekin" , "Grain", 381,
                                                   [

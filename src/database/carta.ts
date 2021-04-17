@@ -1,8 +1,8 @@
 import {Arroz, Aceite_Oliva, Cebolla, Tomate, Pimiento, Setas, Gambas, Spaguetti, Langostino,Papa_Hervida, Pimienta, Azucar, Vainilla, Maicena} from './list_ingredients';
 import {Harina, Huevo, Agua, Sal, Carne_Molida, Jamon_Serrano, Ajo, Perejil, Vino, Zanahoria, Apio, Col, Albahaca, Alcaparras, Queso_Rallado, Limon, Mantequilla} from './list_ingredients';
 import {Pollo, Azafran, Curry, Rape, Laurel, Lomo, Leche, Pan_Rallado, Lechuga, Pan_Hamburguesa, Panceta, Base_Pizza, Oregano, Atun, Papas_Fritas, Galletas, Requeson, Chocolate} from './list_ingredients';
-import {Dish} from './dish';
-import {Menu} from './menu';
+import {Dish} from '../dish';
+import {Menu} from '../menu';
 
 // Entrantes
 
