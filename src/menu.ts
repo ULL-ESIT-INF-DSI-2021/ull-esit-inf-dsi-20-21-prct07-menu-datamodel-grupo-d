@@ -55,7 +55,7 @@ export class Menu {
     this.dishes.forEach(dish => {
       sum += dish.totalDishPrice();
     })
-    return sum;
+    return parseFloat(sum.toFixed(2));
   }
 
   totalMenuCalories(): number {
