@@ -16,21 +16,51 @@ git pull [nombre] master
 npm install (instalar dependencias)
 ```
 
-## Creacion de rama para cada clase
+## Lista de Clases
 
-```bash
-git branch [nombre clase]
-git checkout [nombre clase]
-```
+1. Clase Ingredient
+  * Crea el objeto Ingrediente, con sus propiedades como:
+    * Nombre
+    * Pais
+    * Ciudad
+    * Tipo de Ingrediente -> Fruta, Verdura, Cereal, Lacteo...
+    * Calorias
+    * Macros -> Proteinas, Grasas, Carbohidratos y Fibra
+    * Precio por Kilo
 
-A partir de la rama master tendremos dos ramas, ```develop``` y ```doc```, la primera para la elaboracion del codigo y la segunda para la elaboracion de la documentacion ```(/index.md)```. De la rama develop colgara las ramas de cada clase en las que se trabajara (Ingrendiente, Plato, Menu, Carta, Comanda). La metodolia de trabajo que vamos a seguir, sera la siguiente, primero trabajamos en la rama de nivel mas bajo (Ingrediente), luego mergeamos a develop, una vez mergeado, creamos la rama plato, para asi poder trabajar en la rama Plato, teniendo ya la clase Ingrediente construida, y asi lo haremos con las demas clases de capa superior.
+2. Clase Dish
+  * Crea el objeto Dish, con sus propiedades como:
+    * Nombre
+    * Categoria -> Entrante, Primero, Principal y Postre
+    * Ingredientes
 
-1. Develop -> ```Ingrediente``` -> merge hacia develop
-2. Develop -> ```Plato``` -> merge hacia develop
-3. Develop -> ```Menu```        -> merge hacia develop
-4. Develop -> ```Carta```       -> merge hacia develop
-5. Develop -> ```Comanda```     -> merge hacia develop
+  * Ingredientes
+    * Es un vector de tipo [Ingredient, Number], contiene en cada posicion un ingrediente junto con la cantidad en gramos de dicho ingrediente.
 
-* Script de package.json para Coveralls: ```"coverage": "nyc npm tests && nyc report --reporter=text-lcov | copveralls && rm -rf .ny_output"```
+  * Metodos
+    * ```totalDishCalories()``` -> Calcula las calorias totales del plato.
+    * ```totalDishPrice()``` -> Calcula el precio total del plato.
+    * ```showDishIngredients()``` -> Muestra los ingredientes del plato.
+    * ```getDishMacro()``` -> Calcula las macros totales del plato.
+    * ```dominantIngredientTypeOnDish()``` -> Retorna el tipo de ingrediente mas prodominante en el plato.
+
+3. Clase Menu
+  * Crea el objeto Menu, que tiene como unica propiedad un vector de Dish
+  * Metodos
+    * ```categoryChecker()``` -> Comprueba que el menu contenga al menos 3 categorias diferentes
+    * ```addDish()``` -> Añade un plato al menu.
+    * ```removeDish()``` -> Elimina un plato del menu.
+    * ```totalMenuPrice()``` -> Calcula el precio total del menu.
+    * ```totalMenuCalories()``` -> Calcula las calorias totales del menu.
+    * ```showMenuDishes()``` -> Muestra los platos del menu.
+    * ```getMenuMacro()``` -> Calcula las macros totales del menu.
+    * ```showGroupIngredients()``` -> Muestra los grupos de ingrendientes de cada plato.
+
+4. Clase Comanda
+  * Se encarga de las funciones de navegacion de la carta
+  * Metodos
+    * ```promptUser()``` -> Muestra el menu inicial
+    * ```selectMenu()``` -> Muestra la informacion del menu seleccionado
+    * ```showMenuInfo()``` -> Funcion que se encarga de mostrar la informacion del menu
 
  
