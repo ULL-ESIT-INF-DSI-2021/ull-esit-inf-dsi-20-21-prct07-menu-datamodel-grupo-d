@@ -1,5 +1,6 @@
 # README Practica 7: Diseño de Menu
 
+[![Typescript Project Tests](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-d/actions/workflows/node.js.yml/badge.svg)](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-d/actions/workflows/node.js.yml)
 ## Participantes
 
 * Yeixon Morales Gonzalez (alu0101134956)
