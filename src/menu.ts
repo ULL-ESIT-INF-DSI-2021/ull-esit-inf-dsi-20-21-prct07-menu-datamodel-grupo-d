@@ -15,7 +15,7 @@ import {Dish, DishCategory} from './dish';
 import {Macro} from './ingredient'
 
 export class Menu {
-  constructor(private name: string, private dishes: Dish[]) {
+  constructor(private name: string, public dishes: Dish[]) {
     if (!this.categoryChecker()) {
       console.error("No contiene los tipos de plato suficientes");
     }

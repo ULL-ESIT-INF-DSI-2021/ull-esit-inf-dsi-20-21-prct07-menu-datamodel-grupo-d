@@ -1,0 +1,61 @@
+{
+  "Menus": [
+    {
+      "name": "Menu Personalizado"
+    },
+    {
+      "name": "Pasta con setas",
+      "category": "Starter",
+      "calories": 1556
+    },
+    {
+      "name": "Lomo a la sal",
+      "category": "First",
+      "calories": 1838
+    },
+    {
+      "name": "Torrijas",
+      "category": "Dessert",
+      "calories": 785
+    },
+    {
+      "price": 11.16
+    },
+    {
+      "name": "Menu Personalizado"
+    },
+    {
+      "name": "Croquetas de Pollo",
+      "category": "First",
+      "calories": 3152
+    },
+    {
+      "name": "Hamburguesa Americana",
+      "category": "Main",
+      "calories": 1102
+    },
+    {
+      "name": "Pizza de Atun",
+      "category": "Main",
+      "calories": 1041
+    },
+    {
+      "name": "Tortilla de Papas",
+      "category": "Main",
+      "calories": 2048
+    },
+    {
+      "name": "Isla Flotante",
+      "category": "Dessert",
+      "calories": 2077
+    },
+    {
+      "name": "Leño de Chocolate",
+      "category": "Dessert",
+      "calories": 4894
+    },
+    {
+      "price": 31.45
+    }
+  ]
+}

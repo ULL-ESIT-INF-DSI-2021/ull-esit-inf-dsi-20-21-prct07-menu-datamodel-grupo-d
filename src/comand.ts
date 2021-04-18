@@ -1,7 +1,13 @@
 import * as carta from './database/carta';
 import * as inquirer from 'inquirer';
+import {sleep} from 'sleep-ts';
 import {Menu} from './menu';
 import {Dish} from './dish';
+
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
+const adapter = new FileSync('./src/database/orders.json');
+const db = low(adapter);
 
 // ***************************************
 
@@ -22,7 +28,15 @@ enum CommandOrderMenu {
   Quit = "Quit"
 }
 
-enum Selected {
+enum CommandModifyMenu {
+  Add = "Add Dish",
+  Rem = "Remove Dish",
+  Back = "Back",
+  Select = "Select",
+  Quit = "Quit"
+}
+
+enum CommandIndividualDish {
   Back = "Back",
   Select = "Select",
   Quit = "Quit"
@@ -46,6 +60,78 @@ class Command {
   constructor() {
   }
 
+  saveOnDB(order: Menu): void {
+    db.defaults({Menus: []})
+    .write()
+
+    db.get("Menus")
+      .push({name: order.get_name()}) 
+      .write()
+
+    order.dishes.forEach(elem => {
+      db.get("Menus")
+        .push({name: elem.name, category: elem.category, calories: elem.totalDishCalories()})
+        .write();
+    })
+
+    db.get("Menus")
+      .push({price: order.totalMenuPrice()}) 
+      .write()
+  }
+
+  addDish2Menu(order: Menu){
+    console.clear();
+    this.Dishes.forEach(dish => {
+      console.log(dish.category + ": " + dish.name);
+    })
+    let flag: boolean = false;
+    let aux_order: Menu = order;
+    inquirer.prompt({ type: "input", name: "dish", message: "Seleccione un plato a añadir:"})
+      .then(answers => {
+        this.Dishes.forEach(elem => {
+          if (elem.name == answers["dish"]) {
+            aux_order.addDish(elem);
+            flag = true;
+          }
+        });
+        console.clear();
+        if(!flag)
+          console.log("Plato no encontrado");
+        else 
+          console.log("Plato Añadido");
+        sleep(3000).then(res => {
+          this.showMenuInfo(aux_order);
+        })
+      })
+  }
+
+  removeDishFromMenu(order: Menu) {
+    console.clear();
+    order.dishes.forEach(dish => {
+      console.log(dish.category + ": " + dish.name);
+    })
+    let flag: boolean = false;
+    let aux_order: Menu = order;
+    inquirer.prompt({ type: "input", name: "dish", message: "Seleccione un plato a eliminar:"})
+      .then(answers => {
+        order.dishes.forEach(elem => {
+          if (elem.name == answers["dish"]) {
+            aux_order.removeDish(elem);
+            flag = true;
+          }
+        });
+        console.clear();
+        if(!flag)
+          console.log("Plato no encontrado");
+        else 
+          console.log("Plato Eliminado");
+        sleep(2000).then(res => {
+          this.showMenuInfo(aux_order);
+        })
+      })
+  }
+
+
   showMenuInfo(order: Menu): void {
     console.clear();
     console.log(order.get_name() + ":\n");
@@ -67,15 +153,23 @@ class Command {
       type: "list",
       name: "command",
       message: "Choose option",
-      choices: Object.values(Selected)
+      choices: Object.values(CommandModifyMenu)
     }).then(answers => {
+      let newOrder: Menu = order;
       switch (answers["command"]) {
-        case Selected.Back:
+        case CommandModifyMenu.Add:
+          this.addDish2Menu(order);
+          break;
+        case CommandModifyMenu.Rem:
+          this.removeDishFromMenu(order);
+          break;
+        case CommandModifyMenu.Back:
           this.selectMenu();
           break;
-        case Selected.Select:
+        case CommandModifyMenu.Select:
           console.clear();
           console.log("Selected Menu, Cheers!");
+          this.saveOnDB(order)
           break;
       }
     });
@@ -99,24 +193,21 @@ class Command {
       type: "list",
       name: "command",
       message: "Choose option",
-      choices: Object.values(Selected)
+      choices: Object.values(CommandIndividualDish)
     }).then(answers => {
       switch (answers["command"]) {
-        case Selected.Back:
+        case CommandIndividualDish.Back:
           this.showIndividualDishes();
           break;
-        case Selected.Select:
+        case CommandIndividualDish.Select:
           console.clear();
           console.log("Selected Menu, Cheers!");
+          let Independent_Menu: Menu = new Menu("Unico Plato",[dish])
+          this.saveOnDB(Independent_Menu);
           break;
       }
     });
   }
-
-  personalizedMenu(): void {
-
-  }
-
   selectMenu(): void {
     console.clear();
     inquirer.prompt({
@@ -142,7 +233,7 @@ class Command {
             this.showMenuInfo(this.Menus[4]);
           break;
         case CommandOrderMenu.Menu_6:
-            this.personalizedMenu();
+            this.showMenuInfo(new Menu("Menu Personalizado",[]));
           break;
         case CommandOrderMenu.Back:
             this.promptUser();
