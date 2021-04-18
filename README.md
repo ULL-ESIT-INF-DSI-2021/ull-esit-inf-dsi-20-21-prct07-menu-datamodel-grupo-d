@@ -69,7 +69,21 @@ En primer lugar, la clase ```ingrdient```, la cual se encarga de la creacion de 
 ## Implementación de inquirer.js y lowdb en la clase Comanda
 
 <!-- SOLO AQUÏ-->
+En el desarrollo de la calse Comanda, hemos trabajado con dos modulos, el inquirer.js, el cual nos permitira llevar a cabo el control de un menu por consola; y el lowdb que nos proporciana un mejor manejo de los datos que se generan a la hora de solicitar un menu.
 
+Para empezar instalamos el modulo inquirer.js como dependencia de desarrollo, añadiendolo asi a las dependencias, en el package.json.
+Luego lo importamos al fichero comand.ts con un ```import * as inquirer from 'inquirer';``` de esta forma ya podriamos hacer uso de este modulo en el fichero.
+
+Con lo que respecta al modulo lowdb, tenemos que añadir en el fichero estas lineas, para que se pueda trabajar con él:
+```ts
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
+const adapter = new FileSync('./path/file.json');
+const db = low(adapter);
+```
+Una vez añadidas podemos hacer uso del mismo, el cual esta referenciado por la varaible ```db```.
+
+Para mas informacion ver la documentacion del proyecto en el apartado de la clase Comand
 <!-- -------- -->
 
 ## Metodología de trabajo colaborativo
