@@ -9,7 +9,29 @@ const FileSync = require('lowdb/adapters/FileSync');
 const adapter = new FileSync('./src/database/orders.json');
 const db = low(adapter);
 
+
 // ***************************************
+
+/**
+ * ## Objetos enum para Inquirer.JS
+ * 
+ * Los siguientes módulos se plantean de cara a su uso con la herramienta
+ * de menús interactivos inquirer.js, son unos enumerados sencillos
+ * que representan las opciones a elegir durante la ejecución
+ * 
+ * Se crean 4 bloques de comando:
+ * 
+ * - CommandFirstOrder - representa la opciión de selección entre un menú, un plato individual o salir del programa
+ * - CommandOrderMenu - Permite optar por cada uno de los menús propuestos, volver al menú anterior o salir del programa
+ * - CommandModifyMenu - Permite optar por cada una de las opciones disponibles para el menú seleccionado:
+ *    --Añadir un plato
+ *    --Retirar un plato
+ *    --volver atras
+ *    --seleccionar el menú actual
+ *    --salir del programa
+ * 
+ * - ommandIndividualDish - Representa las opciones en cuanto a la selección de un plato individual
+ */
 
 enum CommandFirstOrder {
   Carta = "Carta de Menu",
@@ -44,7 +66,25 @@ enum CommandIndividualDish {
 
 // *********************************
 
-
+/**
+ * # Clase Command
+ * Esta clase hace de interfaz operativa para la escritura y lectura en la base de datos relativa a la selección de menús del cliente. 
+ * 
+ * La clase dispone de un atributo privado que representa una lista de menús predefinidos y otro atributo privado que contiene la lista 
+ * de alimentos a emplear en la clase para la selección de platos individuales o la creación y modificación de menús
+ * 
+ * La clase tiene la particularidad de operar con lowdb haciendo uso de una variable global creada en el fichero. Esta variable actúa como 
+ * una base de datos a través de la lectura y escritura de un fichero JSON. Gracias a esto la interfaz consigue persistencia. El método saveOnDB
+ * es el que se encarga de guardar el menú pasado por parámetro y escribir su información en formato JSON. Este opera seleccionando el menú de entre 
+ * la lista de menús filtrando el nombre y creando una instancia vacía de una lista de platos que, en un bucle con callback, será rellenada con la 
+ * lista de platos del menú.
+ * 
+ * Por otro lado la propia clase incorpora métodos para la adición y la eliminación de platos en un menú; y métodos para formatear en texto la información de un menú
+ * pasado por parámetro o para mostrar la información de un plato. Estos métodos también estan ligados a la funcionalidad interactiva de inquirer
+ * 
+ * Al crear un objeto del tipo Command, la interfaz se lanza con promptUser que lanza una instancia de inquirer.
+ * 
+ */
 class Command {
   private Menus: Menu[] = [
     carta.Menu_Ruso, carta.Menu_Italiano, carta.Menu_Occidental, carta.Menu_Extreme, carta.Menu_Kids
