@@ -22,7 +22,7 @@ Se adjunta en este documento el informe relativo a la práctica número 7. En es
 con lo que se pone en práctica el desarrollo dee código mediante todas las herramientas disponibles para ello y se pone a prueba la capacidad de los
 participantes para organizarse y emplear el trabajo remoto como una herramienta a su favor.
 
-Se detalla a lo largo de los siguientes apartados tanto la configuración del entorno establecida cómo el desarrollo, de manera adjunta a la [documentación generada](https://ull-esit-inf-dsi-2021.github.io/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-d/), del código que compone las distintas interfaces solicitadas en el ejercicio. 
+Se detalla a lo largo de los siguientes apartados tanto la configuración del entorno establecida cómo el desarrollo, de manera adjunta a la (documentación generada)[https://ull-esit-inf-dsi-2021.github.io/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-d/], del código que compone las distintas interfaces solicitadas en el ejercicio. 
 También se explica brevemete el uso de las herramientas propuestas (inquirer.js y lowdb) a demás del proceso de trabajo colaborativo.
 
 Algunas palabras y frases clave que se pueden identificar con este proyecto son:
@@ -44,8 +44,8 @@ todos los miembros trabajen en las mismas condiciones y bajo los mismos paradigm
 los workflows para que desde el principio, todo lo que se añada a la rama principal, se vea sometido a pruebas de
 construcción de código, los test de desarrollo y la comprobación de cobertura de código.
 
-Para poder llevar a cabo estas tareas se hace uso de la herramienta interna de la aplicación web de (Git Hub)[https://github.com/], 
-(Git Hub Actions)[https://github.com/features/actions]. Mediante esta interfaz de automatización, cada vez que se haga una pull request 
+Para poder llevar a cabo estas tareas se hace uso de la herramienta interna de la aplicación web de [Git Hub](https://github.com/), 
+[Git Hub Actions](https://github.com/features/actions). Mediante esta interfaz de automatización, cada vez que se haga una pull request 
 o se haga una actualización en remoto del contenido local se activarán una serie de tareas que se iniciarán en una máquina virtual remota 
 totalmente configurable desde un archivo YAML inherente al repositorio que se sitúa bajo la carpeta `.github/workflows`.
 
@@ -54,7 +54,7 @@ que compile y ejecute los test. Ésta se ha definido en el fichero `node.js.yml`
 pasan al subir el código al repositorio remoto. En caso de que algo falle dentro de este proceso la Git Hub Action fallará notificando dicho fallo en la
 interfaz preparada para ello o bien mediante una "Badge" que se añade en esete mismo documento al inicio.
 
-Por otro lado, se debe hacer una evolución práctica del uso de la herramienta de cobertura de código "istanbul" y su posterior subida de resultados a (Coveralls)[https://coveralls.io/] (la interfaz que vincula un repositorio remoto y permite la publicación de este análisis de cobertura). Para mejorar este proceso se aplica un automatismo de Actions para ejecutar dicho anális en remoto tras un "push" o una Pull Request. De esta manera se evita tener que estar generando los ficheros de manera local y ejecutando scripts de cada a que se quiera actualizar. La información devuelta por la aplicación web también viene representada por una badge al principio del documento. El fichero donde se especifica la serie de instrucciones que se ejecuta entorno a esta funcionalidad se denomina `coveralls.yml`. Una característica distinta en este "workflow" es la necesidad de emplear un "token" que proporciona la propia interfaz de coveralls para poder localizar el repositorio; en este caso ese "token" debe ser añadido como secreto dentro del propio repositorio en lugar de en un fichero de configuración entre los ficheros del directorio de trabajo.
+Por otro lado, se debe hacer una evolución práctica del uso de la herramienta de cobertura de código "istanbul" y su posterior subida de resultados a [Coveralls](https://coveralls.io/) (la interfaz que vincula un repositorio remoto y permite la publicación de este análisis de cobertura). Para mejorar este proceso se aplica un automatismo de Actions para ejecutar dicho anális en remoto tras un "push" o una Pull Request. De esta manera se evita tener que estar generando los ficheros de manera local y ejecutando scripts de cada a que se quiera actualizar. La información devuelta por la aplicación web también viene representada por una badge al principio del documento. El fichero donde se especifica la serie de instrucciones que se ejecuta entorno a esta funcionalidad se denomina `coveralls.yml`. Una característica distinta en este "workflow" es la necesidad de emplear un "token" que proporciona la propia interfaz de coveralls para poder localizar el repositorio; en este caso ese "token" debe ser añadido como secreto dentro del propio repositorio en lugar de en un fichero de configuración entre los ficheros del directorio de trabajo.
 
 
 ## Proceso de desarrollo de la jerarquía de clases
@@ -71,7 +71,7 @@ en las ramas o en la división del trabajo colaborativo.
 Por otro lado también se hace uso de liveshare y sesiones en google meet para aplicar un desarrollo de código mediante pair programming y para simplemente establecer ciertas reuniones periódicas donde comentar opiniones y compartir conocimientos relativos al desarrollo del proyecto.
 
 
-## (Enlace a la documentación generada)[https://ull-esit-inf-dsi-2021.github.io/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-d/]
+## [Enlace a la documentación generada](https://ull-esit-inf-dsi-2021.github.io/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-d/)
 ## Referencias
 
 - [documentación oficial de Coveralls](https://docs.coveralls.io/)
