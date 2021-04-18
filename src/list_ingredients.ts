@@ -1,5 +1,12 @@
 import {Ingredient, FoodCategory} from './ingredient';
 
+/**
+ * # Lista de ingredientes
+ *  Esta base de datos de 50 ingredientes creados para la comprobación de las
+ *  distintas funcionalidades inluye diversos ingredientes de múltiples categorías
+ *  instanciados a partir de la clase Dish. 
+ */
+
 export let Arroz: Ingredient            = new Ingredient("Arroz", "China", "Pekin" , "Grain", 381,
                                                   [
                                                     {group: "Prot" , grams: 7}, {group: "Fat", grams: 0.9}, {group: "Carb", grams: 86}, {group: "Fiber", grams: 0.2}   
