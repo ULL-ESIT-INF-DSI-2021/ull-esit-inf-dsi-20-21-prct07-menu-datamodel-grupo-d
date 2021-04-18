@@ -41,7 +41,6 @@ enum CommandIndividualDish {
   Quit = "Quit"
 }
 
-// *********************************
 
 /**
  * # Clase Command
@@ -81,7 +80,7 @@ enum CommandIndividualDish {
  * - ommandIndividualDish - Representa las opciones en cuanto a la selección de un plato individual
  * 
  */
-class Command {
+export class Command {
   private Menus: Menu[] = [
     carta.Menu_Ruso, carta.Menu_Italiano, carta.Menu_Occidental, carta.Menu_Extreme, carta.Menu_Kids
   ];
