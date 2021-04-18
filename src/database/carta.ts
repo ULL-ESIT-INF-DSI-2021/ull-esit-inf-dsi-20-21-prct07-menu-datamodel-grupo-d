@@ -1,8 +1,29 @@
 import {Arroz, Aceite_Oliva, Cebolla, Tomate, Pimiento, Setas, Gambas, Spaguetti, Langostino,Papa_Hervida, Pimienta, Azucar, Vainilla, Maicena} from './list_ingredients';
 import {Harina, Huevo, Agua, Sal, Carne_Molida, Jamon_Serrano, Ajo, Perejil, Vino, Zanahoria, Apio, Col, Albahaca, Alcaparras, Queso_Rallado, Limon, Mantequilla} from './list_ingredients';
 import {Pollo, Azafran, Curry, Rape, Laurel, Lomo, Leche, Pan_Rallado, Lechuga, Pan_Hamburguesa, Panceta, Base_Pizza, Oregano, Atun, Papas_Fritas, Galletas, Requeson, Chocolate} from './list_ingredients';
-import {Dish} from './dish';
-import {Menu} from './menu';
+import {Dish} from '../dish';
+import {Menu} from '../menu';
+
+/**
+ * # Fichero de cración de objetos para la carta
+ * Contiene la instanciación de objetos de tipo Dish mediante los objetos 
+ * Ingredient creados en el fichero de lista de ingredientes, a partir de los 
+ * objetos de plato se instancian los distintos menús válidos para la interfaz 
+ * que se define en la clae Comanda.
+ * 
+ * En orden de creación se incluyen:
+ * - Entrantes
+ * - Primeros platos
+ * - Segundos platos 
+ * - Postres 
+ * - Menús
+ *    - italiano
+ *    - ruso
+ *    - kids
+ *    - occidental
+ *    - extreme 
+ * 
+ */
 
 // Entrantes
 
