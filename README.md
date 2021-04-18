@@ -61,7 +61,9 @@ Por otro lado, se debe hacer una evolución práctica del uso de la herramienta 
 
 
 <!-- SOLO AQUÏ-->
+Para desarrolar una correcta estructura de clases decidimos usar la siguiente jerarquia de clases:
 
+En primer lugar tenemos la clase ```ingrdient```, la cual se encarga de la creacion de los ingredientes, luego la clase ```dish```, la cual depende de ```ingredient```, ya que para crear un objeto ```dish```, necesitamos un vector de ingredientes. Lo mismo ocurre con la clase ```menu```, ya que para esta necesitamos un vector de ```dish```. Por lo tanto, tenemos una dependencia entre dichas clases, de esta forma: ```Ingredient -> Dish -> Menu```. Finalmente, tenemos una clase ```Comand```, la cual va a utilizar un conjunto de ingredientes, platos y menus, almacenados en una pequeña base de datos, ```list_ingredients.ts``` y ```carta.ts```, dicha clase se va a ocupar de realizar los pedidos y almacenarlos en un archivo con formato ```JSON```, esto lo hace mediante la libreria ```lowdb```, y la seleccion de platos y menus con la libreria ```Inquirer```.
 <!-- -------- -->
 
 ## Implementación de inquirer.js y lowdb en la clase Comanda
