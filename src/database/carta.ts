@@ -5,7 +5,7 @@ import {Dish} from '../dish';
 import {Menu} from '../menu';
 
 /**
- * # Fichero de cración de objetos para la carta
+ * # Fichero de creación de objetos para la carta
  * Contiene la instanciación de objetos de tipo Dish mediante los objetos 
  * Ingredient creados en el fichero de lista de ingredientes, a partir de los 
  * objetos de plato se instancian los distintos menús válidos para la interfaz 

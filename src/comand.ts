@@ -10,29 +10,6 @@ const adapter = new FileSync('./src/database/orders.json');
 const db = low(adapter);
 
 
-// ***************************************
-
-/**
- * ## Objetos enum para Inquirer.JS
- * 
- * Los siguientes módulos se plantean de cara a su uso con la herramienta
- * de menús interactivos inquirer.js, son unos enumerados sencillos
- * que representan las opciones a elegir durante la ejecución
- * 
- * Se crean 4 bloques de comando:
- * 
- * - CommandFirstOrder - representa la opciión de selección entre un menú, un plato individual o salir del programa
- * - CommandOrderMenu - Permite optar por cada uno de los menús propuestos, volver al menú anterior o salir del programa
- * - CommandModifyMenu - Permite optar por cada una de las opciones disponibles para el menú seleccionado:
- *    --Añadir un plato
- *    --Retirar un plato
- *    --volver atras
- *    --seleccionar el menú actual
- *    --salir del programa
- * 
- * - ommandIndividualDish - Representa las opciones en cuanto a la selección de un plato individual
- */
-
 enum CommandFirstOrder {
   Carta = "Carta de Menu",
   Dish = "Platos individuales",
@@ -83,6 +60,25 @@ enum CommandIndividualDish {
  * pasado por parámetro o para mostrar la información de un plato. Estos métodos también estan ligados a la funcionalidad interactiva de inquirer
  * 
  * Al crear un objeto del tipo Command, la interfaz se lanza con promptUser que lanza una instancia de inquirer.
+ * 
+ *  * ## Objetos enum para Inquirer.JS
+ * 
+ * Los siguientes módulos se plantean de cara a su uso con la herramienta
+ * de menús interactivos inquirer.js, son unos enumerados sencillos
+ * que representan las opciones a elegir durante la ejecución
+ * 
+ * Se crean 4 bloques de comando:
+ * 
+ * - CommandFirstOrder - representa la opciión de selección entre un menú, un plato individual o salir del programa
+ * - CommandOrderMenu - Permite optar por cada uno de los menús propuestos, volver al menú anterior o salir del programa
+ * - CommandModifyMenu - Permite optar por cada una de las opciones disponibles para el menú seleccionado:
+ *    --Añadir un plato
+ *    --Retirar un plato
+ *    --volver atras
+ *    --seleccionar el menú actual
+ *    --salir del programa
+ * 
+ * - ommandIndividualDish - Representa las opciones en cuanto a la selección de un plato individual
  * 
  */
 class Command {
