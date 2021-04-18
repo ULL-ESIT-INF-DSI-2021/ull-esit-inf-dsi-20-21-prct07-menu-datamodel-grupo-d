@@ -1,0 +1,471 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Command | pr07</title>
+	<meta name="description" content="Documentation for pr07">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">pr07</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">pr07</a>
+				</li>
+				<li>
+					<a href="../modules/comand.html">comand</a>
+				</li>
+				<li>
+					<a href="comand.command.html">Command</a>
+				</li>
+			</ul>
+			<h1>Class Command</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<a href="#clase-command" id="clase-command" style="color: inherit; text-decoration: none;">
+							<h1>Clase Command</h1>
+						</a>
+						<p>Esta clase hace de interfaz operativa para la escritura y lectura en la base de datos relativa a la selección de menús del cliente.</p>
+					</div>
+					<p>La clase dispone de un atributo privado que representa una lista de menús predefinidos y otro atributo privado que contiene la lista
+					de alimentos a emplear en la clase para la selección de platos individuales o la creación y modificación de menús</p>
+					<p>La clase tiene la particularidad de operar con lowdb haciendo uso de una variable global creada en el fichero. Esta variable actúa como
+						una base de datos a través de la lectura y escritura de un fichero JSON. Gracias a esto la interfaz consigue persistencia. El método saveOnDB
+						es el que se encarga de guardar el menú pasado por parámetro y escribir su información en formato JSON. Este opera seleccionando el menú de entre
+						la lista de menús filtrando el nombre y creando una instancia vacía de una lista de platos que, en un bucle con callback, será rellenada con la
+					lista de platos del menú.</p>
+					<p>Por otro lado la propia clase incorpora métodos para la adición y la eliminación de platos en un menú; y métodos para formatear en texto la información de un menú
+					pasado por parámetro o para mostrar la información de un plato. Estos métodos también estan ligados a la funcionalidad interactiva de inquirer</p>
+					<p>Al crear un objeto del tipo Command, la interfaz se lanza con promptUser que lanza una instancia de inquirer.</p>
+					<ul>
+						<li>
+							<a href="#objetos-enum-para-inquirerjs" id="objetos-enum-para-inquirerjs" style="color: inherit; text-decoration: none;">
+								<h2>Objetos enum para Inquirer.JS</h2>
+							</a>
+						</li>
+					</ul>
+					<p>Los siguientes módulos se plantean de cara a su uso con la herramienta
+						de menús interactivos inquirer.js, son unos enumerados sencillos
+					que representan las opciones a elegir durante la ejecución</p>
+					<p>Se crean 4 bloques de comando:</p>
+					<ul>
+						<li><p>CommandFirstOrder - representa la opciión de selección entre un menú, un plato individual o salir del programa</p>
+						</li>
+						<li><p>CommandOrderMenu - Permite optar por cada uno de los menús propuestos, volver al menú anterior o salir del programa</p>
+						</li>
+						<li><p>CommandModifyMenu - Permite optar por cada una de las opciones disponibles para el menú seleccionado:
+								--Añadir un plato
+								--Retirar un plato
+								--volver atras
+								--seleccionar el menú actual
+							--salir del programa</p>
+						</li>
+						<li><p>ommandIndividualDish - Representa las opciones en cuanto a la selección de un plato individual</p>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">Command</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="comand.command.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="comand.command.html#dishes" class="tsd-kind-icon">Dishes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="comand.command.html#menus" class="tsd-kind-icon">Menus</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="comand.command.html#adddish2menu" class="tsd-kind-icon">add<wbr>Dish2<wbr>Menu</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="comand.command.html#promptuser" class="tsd-kind-icon">prompt<wbr>User</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="comand.command.html#removedishfrommenu" class="tsd-kind-icon">remove<wbr>Dish<wbr>From<wbr>Menu</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="comand.command.html#saveondb" class="tsd-kind-icon">save<wbr>OnDB</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="comand.command.html#selectmenu" class="tsd-kind-icon">select<wbr>Menu</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="comand.command.html#showdishinfo" class="tsd-kind-icon">show<wbr>Dish<wbr>Info</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="comand.command.html#showindividualdishes" class="tsd-kind-icon">show<wbr>Individual<wbr>Dishes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="comand.command.html#showmenuinfo" class="tsd-kind-icon">show<wbr>Menu<wbr>Info</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Command<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="comand.command.html" class="tsd-signature-type" data-tsd-kind="Class">Command</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in comand.ts:93</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="comand.command.html" class="tsd-signature-type" data-tsd-kind="Class">Command</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="dishes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> Dishes</h3>
+					<div class="tsd-signature tsd-kind-icon">Dishes<span class="tsd-signature-symbol">:</span> <a href="dish.dish-1.html" class="tsd-signature-type" data-tsd-kind="Class">Dish</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in comand.ts:88</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="menus" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> Menus</h3>
+					<div class="tsd-signature tsd-kind-icon">Menus<span class="tsd-signature-symbol">:</span> <a href="menu.menu-1.html" class="tsd-signature-type" data-tsd-kind="Class">Menu</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = ...</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in comand.ts:84</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="adddish2menu" class="tsd-anchor"></a>
+					<h3>add<wbr>Dish2<wbr>Menu</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Dish2<wbr>Menu<span class="tsd-signature-symbol">(</span>order<span class="tsd-signature-symbol">: </span><a href="menu.menu-1.html" class="tsd-signature-type" data-tsd-kind="Class">Menu</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in comand.ts:127</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>order: <a href="menu.menu-1.html" class="tsd-signature-type" data-tsd-kind="Class">Menu</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="promptuser" class="tsd-anchor"></a>
+					<h3>prompt<wbr>User</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">prompt<wbr>User<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in comand.ts:317</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="removedishfrommenu" class="tsd-anchor"></a>
+					<h3>remove<wbr>Dish<wbr>From<wbr>Menu</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Dish<wbr>From<wbr>Menu<span class="tsd-signature-symbol">(</span>order<span class="tsd-signature-symbol">: </span><a href="menu.menu-1.html" class="tsd-signature-type" data-tsd-kind="Class">Menu</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in comand.ts:153</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>order: <a href="menu.menu-1.html" class="tsd-signature-type" data-tsd-kind="Class">Menu</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="saveondb" class="tsd-anchor"></a>
+					<h3>save<wbr>OnDB</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">save<wbr>OnDB<span class="tsd-signature-symbol">(</span>order<span class="tsd-signature-symbol">: </span><a href="menu.menu-1.html" class="tsd-signature-type" data-tsd-kind="Class">Menu</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in comand.ts:98</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>order: <a href="menu.menu-1.html" class="tsd-signature-type" data-tsd-kind="Class">Menu</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="selectmenu" class="tsd-anchor"></a>
+					<h3>select<wbr>Menu</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">select<wbr>Menu<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in comand.ts:256</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="showdishinfo" class="tsd-anchor"></a>
+					<h3>show<wbr>Dish<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">show<wbr>Dish<wbr>Info<span class="tsd-signature-symbol">(</span>dish<span class="tsd-signature-symbol">: </span><a href="dish.dish-1.html" class="tsd-signature-type" data-tsd-kind="Class">Dish</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in comand.ts:223</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dish: <a href="dish.dish-1.html" class="tsd-signature-type" data-tsd-kind="Class">Dish</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="showindividualdishes" class="tsd-anchor"></a>
+					<h3>show<wbr>Individual<wbr>Dishes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">show<wbr>Individual<wbr>Dishes<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in comand.ts:290</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="showmenuinfo" class="tsd-anchor"></a>
+					<h3>show<wbr>Menu<wbr>Info</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">show<wbr>Menu<wbr>Info<span class="tsd-signature-symbol">(</span>order<span class="tsd-signature-symbol">: </span><a href="menu.menu-1.html" class="tsd-signature-type" data-tsd-kind="Class">Menu</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in comand.ts:180</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>order: <a href="menu.menu-1.html" class="tsd-signature-type" data-tsd-kind="Class">Menu</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/comand.html">comand</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/database_carta.html">database/carta</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/database_list_ingredients.html">database/list_<wbr>ingredients</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/dish.html">dish</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/ingredient.html">ingredient</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/menu.html">menu</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class tsd-parent-kind-module">
+						<a href="comand.command.html" class="tsd-kind-icon">Command</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="comand.command.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="comand.command.html#dishes" class="tsd-kind-icon">Dishes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="comand.command.html#menus" class="tsd-kind-icon">Menus</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="comand.command.html#adddish2menu" class="tsd-kind-icon">add<wbr>Dish2<wbr>Menu</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="comand.command.html#promptuser" class="tsd-kind-icon">prompt<wbr>User</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="comand.command.html#removedishfrommenu" class="tsd-kind-icon">remove<wbr>Dish<wbr>From<wbr>Menu</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="comand.command.html#saveondb" class="tsd-kind-icon">save<wbr>OnDB</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="comand.command.html#selectmenu" class="tsd-kind-icon">select<wbr>Menu</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="comand.command.html#showdishinfo" class="tsd-kind-icon">show<wbr>Dish<wbr>Info</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="comand.command.html#showindividualdishes" class="tsd-kind-icon">show<wbr>Individual<wbr>Dishes</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="comand.command.html#showmenuinfo" class="tsd-kind-icon">show<wbr>Menu<wbr>Info</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
