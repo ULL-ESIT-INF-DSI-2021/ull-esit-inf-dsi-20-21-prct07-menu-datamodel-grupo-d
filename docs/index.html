@@ -78,87 +78,90 @@
 					<li>Alejandro Martin De Leon (alu0101015941)</li>
 					<li>Eric Dürr Sierra (alu0101027005)</li>
 				</ul>
-				<a href="#hacer-pull-del-repo" id="hacer-pull-del-repo" style="color: inherit; text-decoration: none;">
-					<h2>Hacer PULL del repo</h2>
+				<a href="#introducción" id="introducción" style="color: inherit; text-decoration: none;">
+					<h2>Introducción</h2>
 				</a>
-				<pre><code class="language-bash"><span style="color: #000000">git init </span>
-<span style="color: #000000">git remote add [nombre] git@github.com:ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-d.git</span>
-<span style="color: #000000">git pull [nombre] master</span>
-<span style="color: #000000">npm install (instalar dependencias)</span>
+				<p>Se adjunta en este documento el informe relativo a la práctica número 7. En esta práctica por vez primera se propone una tarea de trabajo colaborativo,
+					con lo que se pone en práctica el desarrollo dee código mediante todas las herramientas disponibles para ello y se pone a prueba la capacidad de los
+				participantes para organizarse y emplear el trabajo remoto como una herramienta a su favor.</p>
+				<p>Se detalla a lo largo de los siguientes apartados tanto la configuración del entorno establecida cómo el desarrollo, de manera adjunta a la <a href="https://ull-esit-inf-dsi-2021.github.io/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-d/">documentación generada</a>, del código que compone las distintas interfaces solicitadas en el ejercicio.
+				También se explica brevemete el uso de las herramientas propuestas (inquirer.js y lowdb) a demás del proceso de trabajo colaborativo.</p>
+				<p>Algunas palabras y frases clave que se pueden identificar con este proyecto son:</p>
+				<ul>
+					<li>menú alimenticio</li>
+					<li>información nutricional</li>
+					<li>interfaz de selección por terminal</li>
+					<li>cobertura de código</li>
+					<li>flujo de trabajo</li>
+					<li>YAML</li>
+					<li>JSON</li>
+					<li>trabajo remoto</li>
+					<li>entorno colaborativo</li>
+					<li>documentación</li>
+				</ul>
+				<a href="#uso-de-workflows-para--la-integración-continua-y-la-cobertura-de-código" id="uso-de-workflows-para--la-integración-continua-y-la-cobertura-de-código" style="color: inherit; text-decoration: none;">
+					<h2>Uso de workflows para  la integración continua y la cobertura de código</h2>
+				</a>
+				<p>Es indispensable establecer la configuración a la que se ajusta el entorno desde el inicio del proyecto, para que
+					todos los miembros trabajen en las mismas condiciones y bajo los mismos paradigmas. También resulta útil establecer
+					los workflows para que desde el principio, todo lo que se añada a la rama principal, se vea sometido a pruebas de
+				construcción de código, los test de desarrollo y la comprobación de cobertura de código.</p>
+				<p>Para poder llevar a cabo estas tareas se hace uso de la herramienta interna de la aplicación web de <a href="https://github.com/">Git Hub</a>,
+					<a href="https://github.com/features/actions">Git Hub Actions</a>. Mediante esta interfaz de automatización, cada vez que se haga una pull request
+					o se haga una actualización en remoto del contenido local se activarán una serie de tareas que se iniciarán en una máquina virtual remota
+				totalmente configurable desde un archivo YAML inherente al repositorio que se sitúa bajo la carpeta <code>.github/workflows</code>.</p>
+				<p>En este caso se configuran dos archivos para cada una de las características que se desean cumplir. La primera de ellas consiste en una automatización
+					que compile y ejecute los test. Ésta se ha definido en el fichero <code>node.js.yml</code> y se encarga de comprobar que los test son construidos y que todos ellos
+					pasan al subir el código al repositorio remoto. En caso de que algo falle dentro de este proceso la Git Hub Action fallará notificando dicho fallo en la
+				interfaz preparada para ello o bien mediante una &quot;Badge&quot; que se añade en esete mismo documento al inicio.</p>
+				<p>Por otro lado, se debe hacer una evolución práctica del uso de la herramienta de cobertura de código &quot;istanbul&quot; y su posterior subida de resultados a <a href="https://coveralls.io/">Coveralls</a> (la interfaz que vincula un repositorio remoto y permite la publicación de este análisis de cobertura). Para mejorar este proceso se aplica un automatismo de Actions para ejecutar dicho anális en remoto tras un &quot;push&quot; o una Pull Request. De esta manera se evita tener que estar generando los ficheros de manera local y ejecutando scripts de cada a que se quiera actualizar. La información devuelta por la aplicación web también viene representada por una badge al principio del documento. El fichero donde se especifica la serie de instrucciones que se ejecuta entorno a esta funcionalidad se denomina <code>coveralls.yml</code>. Una característica distinta en este &quot;workflow&quot; es la necesidad de emplear un &quot;token&quot; que proporciona la propia interfaz de coveralls para poder localizar el repositorio; en este caso ese &quot;token&quot; debe ser añadido como secreto dentro del propio repositorio en lugar de en un fichero de configuración entre los ficheros del directorio de trabajo.</p>
+				<a href="#proceso-de-desarrollo-de-la-jerarquía-de-clases" id="proceso-de-desarrollo-de-la-jerarquía-de-clases" style="color: inherit; text-decoration: none;">
+					<h2>Proceso de desarrollo de la jerarquía de clases</h2>
+				</a>
+				<!-- SOLO AQUÏ-->
+				<p>Para desarrollar una correcta estructura de clases se usa la siguiente jerarquia de clases:</p>
+				<p>En primer lugar, la clase <code>ingrdient</code>, la cual se encarga de la creacion de los ingredientes es la clase predecesora de <code>dish</code>, la cual depende de <code>ingredient</code>, ya que para crear un objeto <code>dish</code>, se necesita un vector de ingredientes. Lo mismo ocurre con la clase <code>menu</code>, ya que para esta es necesario un vector de <code>dish</code>. Por lo tanto, existe una dependencia entre dichas clases, de esta forma: <code>Ingredient -&gt; Dish -&gt; Menu</code>. Finalmente, la clase <code>Comand</code>, la cual va a utilizar un conjunto de ingredientes, platos y menus, almacenados en una pequeña base de datos, <code>list_ingredients.ts</code> y <code>carta.ts</code>, dicha clase se va a ocupar de realizar los pedidos y almacenarlos en un archivo con formato <code>JSON</code>, esto lo hace mediante la libreria <code>lowdb</code>, y la seleccion de platos y menus con la libreria <code>Inquirer</code>.</p>
+				<!-- -------- -->
+				<a href="#implementación-de-inquirerjs-y-lowdb-en-la-clase-comanda" id="implementación-de-inquirerjs-y-lowdb-en-la-clase-comanda" style="color: inherit; text-decoration: none;">
+					<h2>Implementación de inquirer.js y lowdb en la clase Comanda</h2>
+				</a>
+				<!-- SOLO AQUÏ-->
+				<p>En el desarrollo de la calse Comanda, hemos trabajado con dos modulos, el inquirer.js, el cual nos permitira llevar a cabo el control de un menu por consola; y el lowdb que nos proporciana un mejor manejo de los datos que se generan a la hora de solicitar un menu.</p>
+				<p>Para empezar instalamos el modulo inquirer.js como dependencia de desarrollo, añadiendolo asi a las dependencias, en el package.json.
+				Luego lo importamos al fichero comand.ts con un <code>import * as inquirer from &#39;inquirer&#39;;</code> de esta forma ya podriamos hacer uso de este modulo en el fichero.</p>
+				<p>Con lo que respecta al modulo lowdb, tenemos que añadir en el fichero estas lineas, para que se pueda trabajar con él:</p>
+				<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">low</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;lowdb&#039;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">FileSync</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;lowdb/adapters/FileSync&#039;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">adapter</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">FileSync</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;./path/file.json&#039;</span><span style="color: #000000">);</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">db</span><span style="color: #000000"> = </span><span style="color: #795E26">low</span><span style="color: #000000">(</span><span style="color: #001080">adapter</span><span style="color: #000000">);</span>
 </code></pre>
-				<a href="#lista-de-clases" id="lista-de-clases" style="color: inherit; text-decoration: none;">
-					<h2>Lista de Clases</h2>
+				<p>Una vez añadidas podemos hacer uso del mismo, el cual esta referenciado por la varaible <code>db</code>.</p>
+				<p>Para mas informacion ver la documentacion del proyecto en el apartado de la clase Comand</p>
+				<!-- -------- -->
+				<a href="#metodología-de-trabajo-colaborativo" id="metodología-de-trabajo-colaborativo" style="color: inherit; text-decoration: none;">
+					<h2>Metodología de trabajo colaborativo</h2>
 				</a>
-				<ol>
-					<li>Clase Ingredient</li>
-				</ol>
+				<p>De cara a afrontar una experiencia colaborativa se ha tratado de hacer uso de las Pull Request que GitHub ofrece para realizar la fusión de código de una manera más organizada
+					y de manera que los alumnos restantes al que subió el código sean los revisores; es de esta manera cómo se logra dividir el trabajo sin que quede inconexo el conocimiento acerca de
+					cómo se desarrollan las distintas características del entorno. Es mediante las Pull Request también dónde se previenen los posibles bugs y conflictos que deriven de una mala gestión
+				en las ramas o en la división del trabajo colaborativo.  </p>
+				<p>Por otro lado también se hace uso de liveshare y sesiones en google meet para aplicar un desarrollo de código mediante pair programming y para simplemente establecer ciertas reuniones periódicas donde comentar opiniones y compartir conocimientos relativos al desarrollo del proyecto.</p>
+				<a href="#enlace-a-la-documentación-generada" id="enlace-a-la-documentación-generada" style="color: inherit; text-decoration: none;">
+					<h2><a href="https://ull-esit-inf-dsi-2021.github.io/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-d/">Enlace a la documentación generada</a></h2>
+				</a>
+				<a href="#referencias" id="referencias" style="color: inherit; text-decoration: none;">
+					<h2>Referencias</h2>
+				</a>
 				<ul>
-					<li>Crea el objeto Ingrediente, con sus propiedades como:<ul>
-							<li>Nombre</li>
-							<li>Pais</li>
-							<li>Ciudad</li>
-							<li>Tipo de Ingrediente -&gt; Fruta, Verdura, Cereal, Lacteo...</li>
-							<li>Calorias</li>
-							<li>Macros -&gt; Proteinas, Grasas, Carbohidratos y Fibra</li>
-							<li>Precio por Kilo</li>
-						</ul>
-					</li>
+					<li><a href="https://docs.coveralls.io/">documentación oficial de Coveralls</a></li>
+					<li><a href="https://github.com/typicode/lowdb">Repositorio GitHub de lowdb</a></li>
 				</ul>
-				<ol start="2">
-					<li>Clase Dish</li>
-				</ol>
-				<ul>
-					<li><p>Crea el objeto Dish, con sus propiedades como:</p>
-						<ul>
-							<li>Nombre</li>
-							<li>Categoria -&gt; Entrante, Primero, Principal y Postre</li>
-							<li>Ingredientes</li>
-						</ul>
-					</li>
-					<li><p>Ingredientes</p>
-						<ul>
-							<li>Es un vector de tipo [Ingredient, Number], contiene en cada posicion un ingrediente junto con la cantidad en gramos de dicho ingrediente.</li>
-						</ul>
-					</li>
-					<li><p>Metodos</p>
-						<ul>
-							<li><code>totalDishCalories()</code> -&gt; Calcula las calorias totales del plato.</li>
-							<li><code>totalDishPrice()</code> -&gt; Calcula el precio total del plato.</li>
-							<li><code>showDishIngredients()</code> -&gt; Muestra los ingredientes del plato.</li>
-							<li><code>getDishMacro()</code> -&gt; Calcula las macros totales del plato.</li>
-							<li><code>dominantIngredientTypeOnDish()</code> -&gt; Retorna el tipo de ingrediente mas prodominante en el plato.</li>
-						</ul>
-					</li>
-				</ul>
-				<ol start="3">
-					<li>Clase Menu</li>
-				</ol>
-				<ul>
-					<li>Crea el objeto Menu, que tiene como unica propiedad un vector de Dish</li>
-					<li>Metodos<ul>
-							<li><code>categoryChecker()</code> -&gt; Comprueba que el menu contenga al menos 3 categorias diferentes</li>
-							<li><code>addDish()</code> -&gt; Añade un plato al menu.</li>
-							<li><code>removeDish()</code> -&gt; Elimina un plato del menu.</li>
-							<li><code>totalMenuPrice()</code> -&gt; Calcula el precio total del menu.</li>
-							<li><code>totalMenuCalories()</code> -&gt; Calcula las calorias totales del menu.</li>
-							<li><code>showMenuDishes()</code> -&gt; Muestra los platos del menu.</li>
-							<li><code>getMenuMacro()</code> -&gt; Calcula las macros totales del menu.</li>
-							<li><code>showGroupIngredients()</code> -&gt; Muestra los grupos de ingrendientes de cada plato.</li>
-						</ul>
-					</li>
-				</ul>
-				<ol start="4">
-					<li>Clase Comanda</li>
-				</ol>
-				<ul>
-					<li>Se encarga de las funciones de navegacion de la carta</li>
-					<li>Metodos<ul>
-							<li><code>promptUser()</code> -&gt; Muestra el menu inicial</li>
-							<li><code>selectMenu()</code> -&gt; Muestra la informacion del menu seleccionado</li>
-							<li><code>showMenuInfo()</code> -&gt; Funcion que se encarga de mostrar la informacion del menu</li>
-						</ul>
-					</li>
-				</ul>
+				<a href="#conclusión" id="conclusión" style="color: inherit; text-decoration: none;">
+					<h2>Conclusión</h2>
+				</a>
+				<p>Hasta una sencilla interfaz de selección de menús puede veerse dificultada por la mala gestión de un entorno colaborativo donde falla la comunicación entre los integrantes. Por eso resulta crucial establecer una base sólida respecto al modelo de contribución del repositorio y respecto a cómo se sincronizan las aportaciones de trabajo al ejercicio práctico. </p>
+				<p>En este caso los miembros del grupo han sido capaces de sacar partido a experiencia previa con este tipo de interfaces y establecer una base sólida desde la que partir comunmente, geneerando una jerarquía de ramas que atiende a las dependencias entre las clases que componen el proyecto y buscando la manera de producir el menor volumen de conflictos.</p>
+				<p>Este proyecto se vería notoriamente mejorado mediante el uso de herramientas de gestión de responsabilidades. Por ejemplo el uso de Git Hub Projects para organizar las tareas, asignarlas y generar isues en base a las mismas hubiera dotado el proceso de desarrollo de una mayor agilidad y una estructura organizativa más presente</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -168,19 +171,19 @@
 						<a href="modules.html">Exports</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/carta.html">carta</a>
+						<a href="modules/comand.html">comand</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/comand.html">comand</a>
+						<a href="modules/database_carta.html">database/carta</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/database_list_ingredients.html">database/list_<wbr>ingredients</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/dish.html">dish</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/ingredient.html">ingredient</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/list_ingredients.html">list_<wbr>ingredients</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/menu.html">menu</a>

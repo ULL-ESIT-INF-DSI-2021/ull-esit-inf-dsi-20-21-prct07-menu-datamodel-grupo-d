@@ -68,6 +68,76 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<a href="#class-dish" id="class-dish" style="color: inherit; text-decoration: none;">
+							<h1>Class Dish</h1>
+						</a>
+						<p>Esta clase se encarga de aunar los distintos ingredientes que componen un plato y de agregar
+						algunas propiedades al plato que serán de utilidad para la lógica de creación de menús.</p>
+					</div>
+					<p>Se asume como paso previo en la interfaz final que la creación de los platos permitirá
+						establecer una metodología de evaluación de aceptación de los menús. Cómo ejemplo de ello
+						se incluye la categoría del alimento, que será un dato descriptivo muy útil a la hora de
+					confirmar la validez de un menú.</p>
+					<p>La clase, además de contener los atributos esperados:</p>
+					<ul>
+						<li>Nombre del plato</li>
+						<li>categoría del plato (mediante un tipo de dato personalizado, tal y como se ha hecho con anterioridad)</li>
+						<li>lista de ingredientes que lo componen</li>
+					</ul>
+					<p>también es capaz de evaluar las calorías totales del plato así como su precio en base a los ingredientes
+					y otros datos de interés, para ello se definen los métodos:</p>
+					<ul>
+						<li><p>totalDishCalories() - devuelve un valor numérico que representa las Kcal totales del plato
+							Uso:</p>
+							<pre><code class="language-TS"><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">mashedPotatoesCalories</span><span style="color: #000000">: </span><span style="color: #267F99">number</span><span style="color: #000000"> = </span><span style="color: #001080">mashedPotatoes</span><span style="color: #000000">.</span><span style="color: #795E26">totalDishCalories</span><span style="color: #000000">()</span>
+</code></pre>
+						</li>
+						<li><p>totalDishPrice() - devuelve un valor numérico que representa el coste del plato
+							Uso:</p>
+							<pre><code class="language-TS"><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">mashedPotatoesPrice</span><span style="color: #000000">: </span><span style="color: #267F99">number</span><span style="color: #000000"> = </span><span style="color: #001080">mashedPotatoes</span><span style="color: #000000">.</span><span style="color: #795E26">totalDishPrice</span><span style="color: #000000">()</span>
+</code></pre>
+						</li>
+						<li><p>showIngredients() - devuelve una cadena de caracteres que expone los ingredientes y su cantidad en gramos
+							Uso:</p>
+							<pre><code class="language-TS"><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">mashedPotatoes</span><span style="color: #000000">.</span><span style="color: #795E26">showIngredients</span><span style="color: #000000">()) </span><span style="color: #008000">// &quot;&gt;Potatoes (200g) Milk (100g) Butter (50g) Salt (25g) &quot;</span>
+</code></pre>
+						</li>
+						<li><p>getDishMacro() - devuelve una lista de macronuetrientes que contiene el plato</p>
+						</li>
+						<li><p>dominantIngredientTypeOnDish() - devuelve el tipo de ingrediente más presente en el plato</p>
+						</li>
+					</ul>
+					<dl class="tsd-comment-tags">
+						<dt>param</dt>
+						<dd><p>Name of the dish</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>Category of the dish</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>Ingredients in the dish</p>
+						</dd>
+						<dt>method</dt>
+						<dd><p>showIngredients() Returns ingredients of the dish</p>
+						</dd>
+						<dt>method</dt>
+						<dd><p>totalDishCalories() Calculates total calories of the dish</p>
+						</dd>
+						<dt>method</dt>
+						<dd><p>totalDishPrice() Calculates total price of the dish</p>
+						</dd>
+						<dt>method</dt>
+						<dd><p>getDishMacro() Returns the total amount of proteins, carbs, fats and fiber in the dish</p>
+						</dd>
+						<dt>method</dt>
+						<dd><p>dominantIngredientType() Calcualtes the most dominant type of ingredient of the dish</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -119,7 +189,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in dish.ts:18</li>
+									<li>Defined in dish.ts:57</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -175,7 +245,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in dish.ts:68</li>
+									<li>Defined in dish.ts:107</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -192,7 +262,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in dish.ts:47</li>
+									<li>Defined in dish.ts:86</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../modules/ingredient.html#macro" class="tsd-signature-type" data-tsd-kind="Type alias">Macro</a><span class="tsd-signature-symbol">[]</span></h4>
@@ -209,7 +279,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in dish.ts:39</li>
+									<li>Defined in dish.ts:78</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -226,7 +296,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in dish.ts:23</li>
+									<li>Defined in dish.ts:62</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -243,7 +313,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in dish.ts:31</li>
+									<li>Defined in dish.ts:70</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -259,19 +329,19 @@
 						<a href="../modules.html">Exports</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/carta.html">carta</a>
+						<a href="../modules/comand.html">comand</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/comand.html">comand</a>
+						<a href="../modules/database_carta.html">database/carta</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/database_list_ingredients.html">database/list_<wbr>ingredients</a>
 					</li>
 					<li class="current tsd-kind-module">
 						<a href="../modules/dish.html">dish</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/ingredient.html">ingredient</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/list_ingredients.html">list_<wbr>ingredients</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/menu.html">menu</a>

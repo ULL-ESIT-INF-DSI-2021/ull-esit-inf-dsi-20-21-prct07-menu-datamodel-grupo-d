@@ -68,6 +68,67 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<a href="#clase-ingredient" id="clase-ingredient" style="color: inherit; text-decoration: none;">
+							<h1>Clase Ingredient</h1>
+						</a>
+						<p> Esta clase es la planteada para representa run ingrediente,
+							no presenta mayor complejidad que la propia estructura de datos
+							desde la cual acceder a todas las propiedades inherentes a este
+							tipo de objeto. Será usada por la clase que representa un plato
+						para operar con los datos que se pueden conocer desde ella.</p>
+					</div>
+					<p> Los datos extraidos por cada ingrediente incluyen:</p>
+					<ul>
+						<li>El nombre del ingrediente</li>
+						<li>El país de procedencia</li>
+						<li>La ciudad de procedencia</li>
+						<li>La categoría del ingrediente</li>
+						<li>Las KCal que supone el ingrediente</li>
+						<li>Los macronutrientes que  lo componen</li>
+						<li>El precio por Kilogramo.</li>
+					</ul>
+					<p> Los datos son públicos y de sólo lectura, ya que se supone que tras la creación
+						de un ingrediente no se espera que sea modificado con mucha recurrencia. Por ello
+						y por seguridad se impone el tener que volver a crearlo en caso de tener que cambiar
+						algún aspecto; sin embargo esta situación espera no darse, ya que el programa principal
+					opera únicamente con los propios platos y menús que se compondrán por estos objetos.</p>
+					<p> Esta clase hace uso de un tipo personalizado de datos para representar las distintas
+						categorías de alimentos (FoodCategory) de manera que se pueda discretizar la categoría
+					insertada al instanciar un objeto de esta clase.</p>
+					<p> También se crea el tipo de dato &quot;Macro&quot; que permitirá definir las propiedades de las macros
+					que se esperan que representen los valores nutriocionales de cada ingrediente. Una macro se compone por</p>
+					<ul>
+						<li>grupo (Proteinas, Carbohidratos, Grasas y fibras)</li>
+						<li>gramos</li>
+					</ul>
+					<dl class="tsd-comment-tags">
+						<dt>param</dt>
+						<dd><p>Name of the Ingredient</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>Country of the Ingredient</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>City of the Ingredient</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>Category of the Ingredient</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>Calories of the ingredient</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>Macros of the Ingredient</p>
+						</dd>
+						<dt>param</dt>
+						<dd><p>Price of the Ingredient</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -113,7 +174,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in ingredient.ts:20</li>
+									<li>Defined in ingredient.ts:54</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -205,19 +266,19 @@
 						<a href="../modules.html">Exports</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/carta.html">carta</a>
+						<a href="../modules/comand.html">comand</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/comand.html">comand</a>
+						<a href="../modules/database_carta.html">database/carta</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/database_list_ingredients.html">database/list_<wbr>ingredients</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/dish.html">dish</a>
 					</li>
 					<li class="current tsd-kind-module">
 						<a href="../modules/ingredient.html">ingredient</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/list_ingredients.html">list_<wbr>ingredients</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/menu.html">menu</a>
