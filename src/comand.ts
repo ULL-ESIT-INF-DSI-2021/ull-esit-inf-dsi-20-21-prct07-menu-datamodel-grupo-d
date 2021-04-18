@@ -87,21 +87,6 @@ class Command {
       .write()
     })
 
-
-
-    // db.get("Menus")
-    //   .push({name: order.get_name()}) 
-    //   .write()
-
-    // order.dishes.forEach(elem => {
-    //   db.get("Menus")
-    //     .push({name: elem.name, category: elem.category, calories: elem.totalDishCalories()})
-    //     .write();
-    // })
-
-    // db.get("Menus")
-    //   .push({price: order.totalMenuPrice()}) 
-    //   .write()
   }
 
   addDish2Menu(order: Menu){
