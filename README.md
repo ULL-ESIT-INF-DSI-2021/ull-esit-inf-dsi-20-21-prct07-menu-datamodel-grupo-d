@@ -59,7 +59,16 @@ Por otro lado, se debe hacer una evolución práctica del uso de la herramienta 
 
 ## Proceso de desarrollo de la jerarquía de clases
 
+
+<!-- SOLO AQUÏ-->
+
+<!-- -------- -->
+
 ## Implementación de inquirer.js y lowdb en la clase Comanda
+
+<!-- SOLO AQUÏ-->
+
+<!-- -------- -->
 
 ## Metodología de trabajo colaborativo
 
