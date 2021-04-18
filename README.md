@@ -22,7 +22,7 @@ Se adjunta en este documento el informe relativo a la práctica número 7. En es
 con lo que se pone en práctica el desarrollo dee código mediante todas las herramientas disponibles para ello y se pone a prueba la capacidad de los
 participantes para organizarse y emplear el trabajo remoto como una herramienta a su favor.
 
-Se detalla a lo largo de los siguientes apartados tanto la configuración del entorno establecida cómo el desarrollo, de manera adjunta a la (documentación generada)[https://ull-esit-inf-dsi-2021.github.io/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-d/], del código que compone las distintas interfaces solicitadas en el ejercicio. 
+Se detalla a lo largo de los siguientes apartados tanto la configuración del entorno establecida cómo el desarrollo, de manera adjunta a la [documentación generada](https://ull-esit-inf-dsi-2021.github.io/ull-esit-inf-dsi-20-21-prct07-menu-datamodel-grupo-d/), del código que compone las distintas interfaces solicitadas en el ejercicio. 
 También se explica brevemete el uso de las herramientas propuestas (inquirer.js y lowdb) a demás del proceso de trabajo colaborativo.
 
 Algunas palabras y frases clave que se pueden identificar con este proyecto son:
