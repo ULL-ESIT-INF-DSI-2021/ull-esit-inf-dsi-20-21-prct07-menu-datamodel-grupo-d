@@ -1,5 +1,50 @@
+
+import {Dish, DishCategory} from './dish';
+import {Macro} from './ingredient'
+
 /**
- * Class Menu
+ * # Class Menu
+ * La clase Menu hace de interfaz para representar un conjunto de platos, ésta 
+ * permite la adición, el borrado y la obtención de información útil a cerca de ellos
+ * 
+ * Tal y como se solicita se ha preparado la clase para que deba permitirse la creación
+ * de uno de estos objetos únicamente cuando se incluya al menos tres de los tipos de 
+ * platos clasificados en esta jerarquía de clases:
+ *  - Starter - Plato dee tipo entrante
+ *  - First - Primer plato
+ *  - Main - Segundo plato
+ *  - Dessert - Postre
+ * Para ello se hace uso del método categoryChecker, el cual al final se encarga de llevar
+ * a cabo una cuenta de cada tipo de plato incluido, este devuelve un valor booleano
+ * que permitirá filtrar un menú válido de otro que se deba descartar.
+ * 
+ * Tal y como se espera de este tipo de clases de archivo de objetos se permite manipular el contenido del menú
+ * de manera que se puede:
+ * 
+ * - añadir platos (con addDish())
+ * - eliminar platos (con removeDish())
+ * - revisar el contenido de platos (con showMenuDishes())
+ * 
+ * De manera análoga a la clase Dish esta clase permite el cálculo de los costes totales, las calorías totales
+ * y los macronutrientes contenidos en todo el menú. Para ello se han diseñado los métodos:
+ * 
+ * - totalMenuPrice()
+ * - totalMenuCaloriea()
+ * - getMenuMacro()
+ * 
+ * respectivamente. También se añaden dos métodos para formatear información del menú a cadena de texto. Se plantea
+ * el formato de información útil para la elección de los menús por parte del local y para el cliente. Los métodos son
+ * los siguientes:
+ * 
+ * - showMenuDishes() - Muestra cada plato por su nombre llamando al  método "showIngredients()" de la clase Dish, 
+ *   por lo que se añade a este valor la lista de ingredientes que lo componen.
+ * 
+ * - showGroupIngredients() - Muestra una lista de los grupos de alimentos contenidos en cada plato.
+ * 
+ * Tal y como se puede apreciar esta clase pretende ser autocontenida y operar exclusivamente dentro de ella y con los datos 
+ * que se archiven en cada instancia de Menu, de manera que pueda servir de interfaz informativa para la futura aplicación de comanda
+ * que usará cada restaurante para listar los menús elegidos por los clientes.
+ * 
  * @param dishes Array of dishes in the menu
  * @method categoryChecker() Checks if at least there are 3 different dish categories
  * @method addDish() Pushes a new dish into the menu
@@ -10,9 +55,6 @@
  * @method getMenuMacro() Returns the total amount of proteins, carbs, fats and fiber in the menu
  * @method showGroupIngredients() Returns the group of ingredients in order of appereance
  */
-
-import {Dish, DishCategory} from './dish';
-import {Macro} from './ingredient'
 
 export class Menu {
   constructor(private name: string, private dishes: Dish[]) {
