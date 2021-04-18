@@ -1,61 +1,80 @@
 {
   "Menus": [
     {
-      "name": "Menu Personalizado"
+      "name": "Menu Ruso",
+      "platos": [
+        {
+          "name": "Empanaditas",
+          "category": "Starter",
+          "calories": 6283
+        },
+        {
+          "name": "Pollo al Curry",
+          "category": "First",
+          "calories": 2179
+        },
+        {
+          "name": "Spaguetti Carbonara",
+          "category": "Main",
+          "calories": 1466
+        },
+        {
+          "name": "Torrijas",
+          "category": "Dessert",
+          "calories": 785
+        }
+      ],
+      "precio": 15.14,
+      "id": 0
     },
     {
-      "name": "Pasta con setas",
-      "category": "Starter",
-      "calories": 1556
+      "name": "Menu Italiano",
+      "platos": [
+        {
+          "name": "Arroz con gambas",
+          "category": "Starter",
+          "calories": 1926
+        },
+        {
+          "name": "Lomo Relleno",
+          "category": "First",
+          "calories": 1383
+        },
+        {
+          "name": "Pizza de Atun",
+          "category": "Main",
+          "calories": 1041
+        },
+        {
+          "name": "Pastel de Queso",
+          "category": "Dessert",
+          "calories": 1255
+        }
+      ],
+      "precio": 17.31,
+      "id": 0
     },
     {
-      "name": "Lomo a la sal",
-      "category": "First",
-      "calories": 1838
-    },
-    {
-      "name": "Torrijas",
-      "category": "Dessert",
-      "calories": 785
-    },
-    {
-      "price": 11.16
-    },
-    {
-      "name": "Menu Personalizado"
-    },
-    {
-      "name": "Croquetas de Pollo",
-      "category": "First",
-      "calories": 3152
-    },
-    {
-      "name": "Hamburguesa Americana",
-      "category": "Main",
-      "calories": 1102
-    },
-    {
-      "name": "Pizza de Atun",
-      "category": "Main",
-      "calories": 1041
-    },
-    {
-      "name": "Tortilla de Papas",
-      "category": "Main",
-      "calories": 2048
-    },
-    {
-      "name": "Isla Flotante",
-      "category": "Dessert",
-      "calories": 2077
-    },
-    {
-      "name": "Leño de Chocolate",
-      "category": "Dessert",
-      "calories": 4894
-    },
-    {
-      "price": 31.45
+      "name": "Menu Occidental",
+      "platos": [
+        {
+          "name": "Croquetas de Pollo",
+          "category": "First",
+          "calories": 3152
+        },
+        {
+          "name": "Pizza de Jamon Serrano",
+          "category": "Main",
+          "calories": 1123
+        },
+        {
+          "name": "Leño de Chocolate",
+          "category": "Dessert",
+          "calories": 4894
+        }
+      ],
+      "precio": 16.17,
+      "id": 0
     }
   ]
 }

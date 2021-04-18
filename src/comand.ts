@@ -64,19 +64,44 @@ class Command {
     db.defaults({Menus: []})
     .write()
 
-    db.get("Menus")
-      .push({name: order.get_name()}) 
-      .write()
+    //// [ objPlato1,  objPlato2, ... ]
+    // let aux: Dish = db.get("Menus").filter({name: "Nombre"});
 
-    order.dishes.forEach(elem => {
-      db.get("Menus")
-        .push({name: elem.name, category: elem.category, calories: elem.totalDishCalories()})
-        .write();
+// Añadir plato a menu (Plato)
+
+    db.get('Menus')
+      .push({
+        name: order.get_name(),
+        platos: [
+        ],
+        precio: order.totalMenuPrice(),
+        id: Math.floor(Math.random() % 100000)
+      })
+      .write();
+
+    order.dishes.forEach( (dish)=> {
+      db.get('Menus')
+      .find({name: order.get_name()})
+      .get("platos")
+      .push({name: dish.name, category: dish.category, calories: dish.totalDishCalories()})
+      .write()
     })
 
-    db.get("Menus")
-      .push({price: order.totalMenuPrice()}) 
-      .write()
+
+
+    // db.get("Menus")
+    //   .push({name: order.get_name()}) 
+    //   .write()
+
+    // order.dishes.forEach(elem => {
+    //   db.get("Menus")
+    //     .push({name: elem.name, category: elem.category, calories: elem.totalDishCalories()})
+    //     .write();
+    // })
+
+    // db.get("Menus")
+    //   .push({price: order.totalMenuPrice()}) 
+    //   .write()
   }
 
   addDish2Menu(order: Menu){
